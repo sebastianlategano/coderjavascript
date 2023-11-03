@@ -1,0 +1,271 @@
+/* Menu hamburguesa, solo resoluciones bajas ---------------------------------------------------------*/
+.menuHamburguesa, .hambScroll {
+  padding: 0 31px;
+  @include medidas(100%,71px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: -1px;
+  z-index: 3;
+
+  .menuEnlaces {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 70px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    display: grid;
+    place-items: left;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transition: clip-path 0.4s;
+    z-index: 1;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menuCerrar {
+      padding: 0 31px;
+      @include medidas(100%,71px);
+      background-color: rgba(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: -1px;
+      z-index: 3;
+    }
+
+    .menuEnlace {
+      text-decoration: none;
+      z-index: 1;
+    }
+
+    img {
+      @include fjcenter;
+      margin: 0 auto;
+      height: 80px;
+    }
+
+    p {
+      font-size: 1rem;
+      padding: 10px;
+      width: 250px;
+      text-align: left;
+      width: 50%;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+
+    &:target {
+      clip-path: polygon(-100% -100%, 50% -100%, 50% 100%, 0% 100%);
+    }
+  }
+
+  .miniLogo {
+    width: 50%;
+    margin: 31px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .linkResaltado {
+    color: $colorMarron;
+  }
+
+  .linkComun {
+    color: $colorGrisOscuro;
+  }
+
+  .menuIcon img {
+    @include medidas(20px, 20px);
+    margin-left: 31px;
+    margin-right: 10px;
+  }
+}
+
+.cover2 {
+  width: 25%;
+}
+
+.cover3 {
+  width: 115%;
+}
+
+#menuImg {
+  height: 25px;
+}
+
+#hambTop {
+  transition: background-color 0.4s ease-out;
+}
+
+/* Fondo diferente para cuando se hace scroll */
+.hambScroll {
+  background-color: $colorBlanco;
+  img {
+    height: 50px;
+  }
+}
+
+/*Common para los 2 tipos de header ---------------------------------------------------------------------------*/
+
+.coverLinks, .scroll, .headerPages {
+  .linkUnderlined a {
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+    background: {
+      size: 200% 100%;
+      position: -100%;
+      clip: text;
+      image: linear-gradient(
+      to right,
+      $colorVerdeOscuro,
+      $colorVerdeOscuro 50%,
+      $colorGrisOscuro 50%
+    );
+    }
+
+    &:before {
+      content: "";
+      background: $colorVerdeOscuro;
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      @include medidas(0,3px);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-position: 0;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  /* Diferente para la pagina active */
+  .linkInicio a {
+    background-image: linear-gradient(
+      to right,
+      $colorGrisOscuro,
+      $colorGrisOscuro 50%,
+      $colorVerdeOscuro 50%
+    );
+  }
+}
+
+/* Cambia el color del bg del menu top al hacer scroll */
+#navTop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include medidas(100%,70px);
+  box-sizing: border-box;
+  padding: 12px 18px;
+  transition: background-color 0.4s ease-out;
+  z-index: 3;
+}
+
+.scroll {
+  background-color: rgb(255, 255, 255, 0.97);
+}
+
+.coverLinks, .scroll {
+  text-align: center;
+}
+
+.coverLinks ul li, .scroll ul li {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+/* Exclusivo header/cover del index --------------------------------------------------------------------------------- */
+.cover {
+  min-height: 100vh;
+
+  .coverFondo {
+    .coverZoom {
+      animation: zoom-in-zoom-out 40s ease infinite;
+      transition: 0.5s ease; 
+    }
+
+    .coverLogo {
+      margin: 30px;
+    }
+
+    .coverTexto p {
+      color: $colorVerdeOscuro;
+    }
+
+    .coverBoton {
+      display: flex;
+      z-index: 1;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .carousel-caption {
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: initial;
+    }
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.coverTexto p, .coverTexto h1, .coverTexto h2 {
+  font-weight: 700;
+  transition: 0.5s ease;
+}
+
+/* Header diferente para las otras páginas -------------------------------------------------------------------------- */
+.headerPages {
+  min-height: 60vh;
+  background: {
+    image: url(../assets/img/coverpages.jpg);
+    position: center;
+    size: cover;
+  }
+}
+
+.headerLogo {
+  height: 60vh;
+}
+
+.coverTexto h1, .coverTexto h2 {
+  color: $colorGrisOscuro;
+}
+
+.coverTexto h2 {
+  font-size: 3rem;
+}
+
+/* Keyframes para el efecto zoom del cover del index */
+/* ------------------------------------------------------------------------------- */
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

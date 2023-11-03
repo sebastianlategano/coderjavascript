@@ -1,61 +1,604 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de precio de cortinas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legioma natural</title>
+  <meta name="description" content="Descubre nuestra línea de cosméticos naturales que realzan tu belleza de manera saludable. Ingredientes puros para cuidar tu piel al máximo.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
 </head>
 
 <body>
-    <div id="calculadora" class="rounded-3 border shadow-lg">
-        <h1 class="m-4">Simulador de Compra de Cortinas</h1>
-        <h3 class="m-4">Consiga un 2% de descuento adicional por cada cortina que agregue a su pedido</h3>
-        <h5 class="m-4">(Descuento máximo 10%)</h6>
-            <input type="number" id="ancho" min="0.01" step="0.01" placeholder="Ancho (metros)" class="text-center rounded m-3 p-2 border-0 shadow" required>
-            <br>
-            <input type="number" id="alto" min="0.01" step="0.01" placeholder="Alto (metros)" class="text-center rounded m-3 p-2 border-0 shadow" required>
-            <br>
-            <input type="number" id="cantidad" min="1" step="1" placeholder="Cantidad" class="text-center rounded m-3 p-2 border-0 shadow" required>
-            <br>
-            <button onclick="calcularCosto()" class="btn btn-light btn-lg m-4">Calcular</button>
-            <h3 id="resultado" class="mt-5 mb-2"></h3>
+  
+  <div id="home"></div>
 
-            <div class="centerBtn mb-3">
-                <button id="agregar-al-carrito" onclick="agregarAlCarrito()" class="btn btn-light btn-lg m-4"
-                    style="display: none;">Agregar al carrito</button>
+  <!-- Nav mobile --------------------------------------------------------------------------------------------------------->
+  <header>
+    <nav class="menuHamburguesa" id="hambTop">
+      <a href="#menuDesplegable"><img src="assets/img/menu.png" alt="Menu hamburguesa" id="menuImg"></a>
+      <div class="menuEnlaces" id="menuDesplegable">
+        <div class="menuCerrar">
+          <a href="#a"><img src="assets/img/menu.png" alt="Menu hamburguesa" id="menuImg"></a>
+        </div>
+        <div class="miniLogo">
+          <img src="assets/img/logo.png" alt="Logo">
+        </div>
+        <ul>
+          <li><a href="index.html" class="menuEnlace"><p class="linkResaltado"><span class="menuIcon"><img src="assets/img/hambHome.png" alt=""></span>Inicio</p></a></li>
+          <li><a href="pages/producto.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="assets/img/hambProductos.png" alt=""></span>Productos</p></a></li>
+          <li><a href="pages/aboutus.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="assets/img/hambAboutUs.png" alt=""></span>Sobre nosotros</p></a></li>
+          <li><a href="pages/faq.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="assets/img/hambFaq.png" alt=""></span>Preguntas frecuentes</p></a></li>
+          <li><a href="pages/contacto.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="assets/img/hambContacto.png" alt=""></span>Contacto</p></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Switch toggler para modo oscuro ------------------------------------------------------------------------------------>
+  <div class="wrapper">
+    <input type="checkbox" name="checkbox" class="switch" id="theme-toggle" checked>
+  </div>
+
+  <!-- COVER Nav Desktop --------------------------------------------------------------------------------------------------->
+  <section class="cover">
+    <header>
+      <nav class="coverLinks" id="navTop">
+        <ul class="linkUnderlined">
+          <li><a href="pages/producto.html">Productos</a></li>
+          <li><a href="pages/aboutus.html">Sobre nosotros</a></li>
+          <li class="linkInicio"><a href="#home">Inicio</a></li>
+          <li><a href="pages/faq.html">Preguntas frecuentes</a></li>
+          <li><a href="pages/contacto.html">Contacto</a></li>
+
+        </ul>
+      </nav>
+    </header>
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-interval="7000" data-bs-ride="carousel" data-bs-touch="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active coverFondo">
+          <div class="coverDesktop">
+            <img src="assets/img/cover1.jpg" class="d-block w-100 coverZoom" alt="Envases de cosmética natural">
+          </div>
+          <div class="coverMobile">
+            <img src="assets/img/coverMobile1.jpg" class="d-block w-100 coverZoom" alt="Envases de cosmética natural">
+          </div>
+          <div class="carousel-caption d-md-block">
+            <div class="coverLogo">
+              <a href="index.html"><img src="assets/img/logo.png" alt="Logo"></a>
             </div>
-
-            <div class="centerBtn">
-                <button onclick="mostrarCarrito()" class="btn btn-light btn-lg m-4">Mostrar Carrito</button>
+            <div class="coverTexto">
+              <p class="animate__animated animate__fadeInUp animate__delay-3s">natural & vegan</p>
+              <h1 class="animate__animated animate__fadeInUp animate__delay-2s">Cosmética natural</h1>
             </div>
-
-            <div id="carrito-vacio" class="alert alert-info mt-3" style="display: none;">El carrito está vacío.</div>
-
-            <div id="carrito-container" class="m-4">
-                <ul id="carrito-list" class="list-group">
-                </ul>
+            <div class="coverBoton justify-content-center animate__animated animate__fadeInUp animate__delay-1s">
+              <a href="pages/producto.html"><button type="button" class="btn btn-light btn-lg">Shop</button></a>
             </div>
+          </div>
+        </div>
 
-            <h3 class="mt-5 mb-3">También ofrecemos cortinas más económicas de tamaños estandar</h3>
+        <div class="carousel-item coverFondo">
+          <div class="coverDesktop">
+            <img src="assets/img/cover2.jpg" class="d-block w-100 coverZoom" alt="Tabla con toallón y jabón">
+          </div>
+          <div class="coverMobile">
+            <img src="assets/img/coverMobile2.jpg" class="d-block w-100 coverZoom" alt="Envases de cosmética natural">
+          </div>
+          <div class="carousel-caption d-md-block cover2">
+            <div class="coverLogo justify-content-center">
+              <a href="index.html"><img src="assets/img/logo.png" alt="Logo"></a>
+            </div>
+            <div class="coverTexto">
+              <p class="animate__animated animate__fadeInUp animate__delay-3s">conoce más sobre</p>
+              <h2 class="animate__animated animate__fadeInUp animate__delay-2s">Legioma</h2>
+            </div>
+            <div class="coverBoton animate__animated animate__fadeInUp animate__delay-1s d-flex justify-content-center">
+              <a href="pages/aboutus.html"><button type="button" class="btn btn-light btn-lg">Sobre nosotros</button></a>
+            </div>
+          </div>
+        </div>
 
-            <button id="mostrar-medidas-estandar" onclick="mostrarMedidasEstandar()"
-                class="btn btn-light btn-lg m-4">Mostrar Medidas Estándar</button>
+        <div class="carousel-item coverFondo">
+          <div class="coverDesktop">
+            <img src="assets/img/cover3.jpg" class="d-block w-100 coverZoom" alt="Preparación natural">
+          </div>
+          <div class="coverMobile">
+            <img src="assets/img/coverMobile3.jpg" class="d-block w-100 coverZoom" alt="Envases de cosmética natural">
+          </div>
+          <div class="carousel-caption d-md-block cover3">
+            <div class="coverLogo justify-content-center">
+              <a href="index.html"><img src="assets/img/logo.png" alt="Logo"></a>
+            </div>
+            <div class="coverTexto">
+              <p class="animate__animated animate__fadeInUp animate__delay-3s">Haz tu pedido personalizado</p>
+              <h2 class="animate__animated animate__fadeInUp animate__delay-2s">Contáctanos</h2>
+            </div>
+            <div class="coverBoton animate__animated animate__fadeInUp animate__delay-1s d-flex justify-content-center">
+              <a href="pages/contacto.html"><button type="button" class="btn btn-light btn-lg">Escribir
+                  mensaje</button></a>
+            </div>
+          </div>
+        </div>
 
-            <div id="medidas-estandar-container"></div>
+      </div>
 
-            <div id="confirmacion" class="alert alert-success mt-3" style="display: none;"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
 
-            <div id="confirmacion-eliminacion" class="alert alert-danger mt-3" style="display: none;"></div>
-
-            <ul id="listado" class="m-5"></ul>
-            <p id="sumaTotal" class="m-4"></p>
     </div>
 
-    <script src="script.js"></script>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- Separador ------------------------------------------------------------------------------------------------------------------------>
+    <section class="separador text-center">
+      <div class="p-4 elemento-con-delay">
+        <img src="assets/img/icon-1.png" alt="Hojas" class="me-4">
+        <img src="assets/img/icon-2.png" alt="Mortero" class="me-4">
+        <img src="assets/img/icon-3.png" alt="Crema" class="me-4">
+      </div>
+
+      <div class="pb-3 elemento-oculto">
+        <p class="h4">Descubre nuestra tienda de cosmética natural: ingredientes puros y respetuosos con tu piel. Belleza en armonía con la naturaleza</p>
+      </div>
+    </section>
+
+    <!-- Productos destacados --------------------------------------------------------------------------------------------------------------->
+    <section class="catalogo container-fluid mb-5">
+    
+      <h2 class="text-center mt-5">Productos <span class="tarjetaSpan1">destacados</span></h2>
+      <p class="lineaSubrayadoMarron">______</p>
+    
+      <div class="row text-center gx-5 gy-5">
+    
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/facial1.jpg" alt="Producto de la línea facial">
+          </div>
+          <p class="mt-3 h4">Tónico facial</p>
+          <p>Floral x100cc</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+    
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/facial2.jpg" alt="Producto de la línea facial">
+          </div>
+          <p class="mt-3 h4">Crema humectante</p>
+          <p>Manzanilla 75cc</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+    
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/capilar1.jpg" alt="Producto de la línea capilar">
+          </div>
+          <p class="mt-3 h4">Shampoo sólido</p>
+          <p>Naranja y limón x50g</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/capilar2.jpg" alt="Producto de la línea capilar">
+          </div>
+          <p class="mt-3 h4">Acondicionador</p>
+          <p>Ortiga y romero x50g</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+    
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/corporal1.jpg" alt="Producto de la línea corporal">
+          </div>
+          <p class="mt-3 h4">Bálsamo corporal</p>
+          <p>Regenerante x30gr</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/corporal2.jpg" alt="Producto de la línea corporal">
+          </div>
+          <p class="mt-3 h4">Aceite revitalizante</p>
+          <p>Para uñas x30cc</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+    
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/kits1.jpg" alt="Producto de la línea de baño">
+          </div>
+          <p class="mt-3 h4">Kit rutina capilar 1</p>
+          <p>Sólidos de naranja y limón</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+    
+        <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
+          <div class="dontOverflow">
+            <img class="img-fluid catalogoImagen" src="assets/img/accesorios1.jpg" alt="Producto de la línea de accesorios">
+          </div>
+          <p class="mt-3 h4">Cepillo chico</p>
+          <p>Masajeador</p>
+          <p class="lead">$10.00</p>
+          <img class="carrito img-fluid" src="assets/img/addtocart.png" alt="Carrito">
+        </article>
+    
+      </div>
+    
+    </section>
+
+    <!-- Sección informativa ---------------------------------------------------------------------------------------->
+    <section class="informativo pt-80 pb-80 p5 elemento-con-delay rounded-3 border shadow-lg">
+      <div class="container">
+    
+        <div class="row">
+          <article class="col-lg-4 col-md-6 mb-lg-0 corrector">
+            <div class="informativoCaja d-flex align-items-center">
+              <div class="informativoIcono">
+                <img src="assets/img/infoenvios.png" alt="Camión de envíos">
+              </div>
+              <div class="informativoTexto">
+                <h3>Envíos a todo el país</h3>
+                <p>En ordenes mayores a $75</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 mb-lg-0 corrector">
+            <div class="informativoCaja d-flex align-items-center">
+              <div class="informativoIcono">
+                <img src="assets/img/infollamadas.png" alt="Teléfono">
+              </div>
+              <div class="informativoTexto">
+                <h3>Consultas 24/7</h3>
+                <p>Respondemos todos los días</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-lg-4 col-md-6 corrector">
+            <div class="informativoCaja d-flex align-items-center">
+              <div class="informativoIcono">
+                <img src="assets/img/infotarjeta.png" alt="Tarjeta de crédito">
+              </div>
+              <div class="informativoTexto">
+                <h3>Pagá como quieras</h3>
+                <p>Aceptamos todas las tarjetas</p>
+              </div>
+            </div>
+          </article>
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- Categorías ---------------------------------------------------------------------------------------------------------------->
+    <section class="categorias">
+      <h2 class="categoriasTitulo">Nuestras <span class="tarjetaSpan1">categorías</span></h2>
+      <p class="lineaSubrayadoMarron">______</p>
+      <div class="categoriasSelector">
+        <div class="categoria1">
+          <div class="categoriaTexto">
+            <a href="pages/producto.html#facial">
+              <h2>Facial</h2>
+            </a>
+            <span>Glow natural</span>
+          </div>
+        </div>
+        <div class="categoria2">
+          <div class="categoriaTexto">
+            <a href="pages/producto.html#corporal">
+              <h2>Corporal</h2>
+            </a>
+            <span>Cuidado suave</span>
+          </div>
+        </div>
+        <div class="categoria3">
+          <div class="categoriaTexto">
+            <a href="pages/producto.html#capilar">
+              <h2>Capilar</h2>
+            </a>
+            <span>Cabello vivo</span>
+          </div>
+        </div>
+        <div class="categoria4">
+          <div class="categoriaTexto">
+            <a href="pages/producto.html#kits">
+              <h2>Kits</h2>
+            </a>
+            <span>Eco packs</span>
+          </div>
+        </div>
+        <div class="categoria5">
+          <div class="categoriaTexto">
+            <a href="pages/producto.html#accesorios">
+              <h2>Accesorios</h2>
+            </a>
+            <span>Eco sustentables</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Tarjetas promoción y acerca de nosotros --------------------------------------------------------------------->
+  <section class="tarjetas">
+    <div class="container-fluid row tarjetasCaja rounded-3 border shadow-lg">
+  
+      <div class="col-lg-5 tarjetaImagen text-center">
+        <img src="assets/img/accesoriospromo.jpg" alt="Accesorios para cosmética" class="img-fluid mx-auto rounded">
+      </div>
+  
+      <div class="col-lg-7 justify-content-center d-flex flex-column corrector">
+        <h2 class="tarjetaTexto">Este mes accesorios, con grandes <span class="tarjetaSpan1">descuentos...</span></h2>
+        <p class="lead tarjetaDescripcion text-center m-0 m-sm-2 m-md-5">
+          Descubre la belleza de lo natural con nuestros accesorios para cosmética natural.
+          Estamos comprometidos con la sostenibilidad, por lo que nos aseguramos de que cada accesorio que encuentres
+          en nuestra tienda esté hecho con materiales amigables con el medio ambiente.</p>
+  
+        <div class="botonMarron mt-5 mb-5 elemento-oculto">
+          <a href="pages/producto.html#accesorios"><button type="button" class="btn btn-light btn-lg">Comprar</button></a>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- Sección testimonios -------------------------------------------------------------------------------------------->
+  <section class="resenias">
+    <div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-interval="3000" data-bs-ride="carousel"
+      data-bs-touch="true">
+      <h2 class="text-center mt-5">Clientes <span class="tarjetaSpan3">felices</span></h2>
+      <p class="lineaSubrayadoRosa">______</p>
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+          <div class="container testimonios">
+            <div class="row">
+              <div class="col-lg-4">
+                <img src="assets/img/cara1.png" alt="Ícono WhatsApp" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Joana</h2>
+                <img src="assets/img/estrellas.png" alt="5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ La calidad de los productos es excepcional, y brindan asesoramiento experto, de manera casi inmediata
+                  y muy agradable ❞</p>
+              </div>
+              <div class="col-lg-4">
+                <img src="assets/img/cara2.png" alt="Ícono Instagram" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Valentina</h2>
+                <img src="assets/img/estrellas.png" alt="5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Consumo sus productos y mi hija peque también! nos encantan los aromas! sin duda los recomendamos por
+                  su calidad ♥! ❞</p>
+              </div>
+              <div class="col-lg-4">
+                <img src="assets/img/cara3.png" alt="Ícono Facebook" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Sofía</h2>
+                <img src="assets/img/estrellas2.png" alt="4.5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Son productos muy buenos con optimos reultados super recomendables y naturales. Los recomiendo sin
+                  dudarlo! ❞</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <div class="container testimonios">
+            <div class="row">
+              <div class="col-lg-4">
+                <img src="assets/img/cara4.png" alt="Ícono WhatsApp" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Camila</h2>
+                <img src="assets/img/estrellas2.png" alt="4.5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Excelentes productos artesanales, me cambiaron la piel por completo! Súper recomiendo ❞</p>
+              </div>
+              <div class="col-lg-4">
+                <img src="assets/img/cara5.png" alt="Ícono Instagram" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Mariela</h2>
+                <img src="assets/img/estrellas.png" alt="5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Productos Realmente Naturales y de excelente calidad. La atención es personalizada. Totalmente
+                  recomendable ❞</p>
+              </div>
+              <div class="col-lg-4">
+                <img src="assets/img/cara6.png" alt="Ícono Facebook" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Facundo</h2>
+                <img src="assets/img/estrellas.png" alt="5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Excelentes productos ... Equilibrados productos de muy bella fragancia y textura!!! Me encanta
+                  usarlas cada día ❞</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <div class="container testimonios">
+            <div class="row">
+              <div class="col-lg-4">
+                <img src="assets/img/cara7.png" alt="Ícono WhatsApp" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Juan</h2>
+                <img src="assets/img/estrellas2.png" alt="5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Excelentes productos, probé los jabones, óleos y cremas. Todo genial y muy buena atención ❞</p>
+              </div>
+              <div class="col-lg-4">
+                <img src="assets/img/cara8.png" alt="Ícono Instagram" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Florencia</h2>
+                <img src="assets/img/estrellas2.png" alt="4.5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Productos de primera calidad, muy por encima de las primeras marcas que solo son marketineras. Muy
+                  recomendable ❞</p>
+              </div>
+              <div class="col-lg-4">
+                <img src="assets/img/cara9.png" alt="Ícono Facebook" class="testimoniosImg img-fluid mx-auto">
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 50px;">Ana</h2>
+                <img src="assets/img/estrellas.png" alt="5 de 5 estrellas" class="estrellas img-fluid mx-auto">
+                <p>❝ Divinos los productos, excelente la presentación, el asesoramiento un lujo gracias por toda la
+                  atención ❞</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div>
+      <p class="lead text-center participa">Te gustaría aparecer en esta sección?</p>
+      <div class="botonRosa elemento-oculto mt-5 mb-5">
+        <a href="pages/contacto.html"><button type="button" class="btn btn-light btn-lg">Contactar</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarjeta YouTube ------------------------------------------------------------------------------------------------------>
+  <section class="tarjetas">
+    <div class="container-fluid row tarjetasCaja rounded-3 border shadow-lg">
+  
+      <div class="col-lg-7 justify-content-center d-flex flex-column corrector">
+        <h2 class="tarjetaTexto">Somos <span class="tarjetaSpan2">Legioma</span></h2>
+        <p class="lead tarjetaDescripcion text-center m-0 m-sm-2 m-md-5">
+          Conoce más acerca de nuestra pasión por la belleza natural. En nuestra empresa de cosmética, fusionamos la
+          pureza de la naturaleza con la ciencia para brindarte productos seguros, efectivos y respetuosos con el
+          medio ambiente. Descubre tu mejor versión, de manera natural.</p>
+        <div class="botonVerde mt-5 mb-5 elemento-oculto">
+          <a href="pages/aboutus.html"><button type="button" class="btn btn-light btn-lg">Conocenos</button></a>
+        </div>
+      </div>
+  
+      <div class="col-lg-5 tarjetaImagen text-center">
+        <div class="ytIzq">
+          <div class="recuadro">
+            <img src="assets/img/aboutusindex.jpg" alt="" class="rounded img-fluid">
+          </div>
+  
+  
+          <div class="botonPopUp">
+            <a class="button" href="#popup1"><img src="assets/img/play.png" alt=""></a>
+          </div>
+          <div class="cobertor" id="popup1">
+            <div class="popup rounded">
+              <div class="popupTexto">
+                <p>Video YouTube</p>
+                <a href="#a" class="cerrar"><button onclick="stop()">x</button></a>
+              </div>
+              <div class="conteindoPopUp">
+                <iframe id="videoId" width="560" height="315"
+                  src="https://www.youtube.com/embed/Wrw1JEcRw1w?enablejsapi=1" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- Sección Instagram --------------------------------------------------------------------------------------------------->
+  <section class="insta">
+    <div class="instaCaja">
+      <h2 class="elemento-oculto">Seguinos!</h2>
+
+      <!-- Choclo de codigo copiado y pegado para el iframe de instagram -->
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CviSTpKol-7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CviSTpKol-7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CviSTpKol-7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida por Au Naturale Cosmetics (@aunaturalelife)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+
+    </div>
+  </section>
+
+  <!-- Incono Whats App + Scroll to the top ----------------------------------------------------------------------------------->
+  <div class="whatsappIcon">
+    <a href="#home"><img src="assets/img/scrollup.svg" alt="Icono para hacer scroll hasta el top de la página" id="scrollTop"></a>
+    <a href="https://wa.me/5493416601395"><img src="assets/img/WhatsApp_icon.png" alt="Icono Whats App" id="wppIcon"></a>
+  </div>
+
+  </main>
+
+  <!-- FOOTER ----------------------------------------------------------------------------------------------------------------->
+  <footer>
+
+    <section class="footerMenu">
+
+      <div class="footerLogo">
+        <a href="#home"><img src="assets/img/logo.png" alt="Logo de Legioma"></a>
+      </div>
+
+      <div class="footerLinks">
+        <ul>
+          <li><a href="pages/producto.html">Productos</a></li>
+          <li><a href="pages/aboutus.html">Sobre nosotros</a></li>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="pages/faq.html">Preguntas frecuentes</a></li>
+          <li><a href="pages/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footerBottom">
+        <hr>
+        <p>Todos los derechos reservados &copy; 2023 | Legioma</p>
+        <p class="poweredBy">Web diseñada por Sebastián Lategano</p>
+      </div>
+
+      <div class="redesSociales">
+        <a href="https://www.facebook.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a>
+        <a href="https://www.whatsapp.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+          </svg>
+        </a>
+      </div>
+
+    </section>
+
+  </footer>
+
+  <!-- Script Bootstrap ------------------------------------------------------------------------------------------------------------------>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Link a archivo script.js -->
+  <script src="script.js"></script>
+
 </body>
 
 </html>

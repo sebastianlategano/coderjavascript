@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre nosotros</title>
+  <meta name="description" content="Somos apasionados de la belleza natural. Nuestra misión es ofrecer cosméticos que cuidan tu piel y respetan el medio ambiente. Conócenos mejor.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="shortcut icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+
+  <div id="home"></div>
+
+  <!-- Nav mobile --------------------------------------------------------------------------------------------------------->
+  <header>
+    <nav class="menuHamburguesa" id="hambTop">
+      <a href="#menuDesplegable"><img src="../assets/img/menu.png" alt="Menu hamburguesa" id="menuImg"></a>
+      <div class="menuEnlaces" id="menuDesplegable">
+        <div class="menuCerrar">
+          <a href="#a"><img src="../assets/img/menu.png" alt="Menu hamburguesa" id="menuImg"></a>
+        </div>
+        <div class="miniLogo">
+          <img src="../assets/img/logo.png" alt="Logo">
+        </div>
+        <ul>
+          <li><a href="../index.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="../assets/img/hambHome.png" alt=""></span>Inicio</p></a></li>
+          <li><a href="producto.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="../assets/img/hambProductos.png" alt=""></span>Productos</p></a></li>
+          <li><a href="aboutus.html" class="menuEnlace"><p class="linkResaltado"><span class="menuIcon"><img src="../assets/img/hambAboutUs.png" alt=""></span>Sobre nosotros</p></a></li>
+          <li><a href="faq.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="../assets/img/hambFaq.png" alt=""></span>Preguntas frecuentes</p></a></li>
+          <li><a href="contacto.html" class="menuEnlace"><p class="linkComun"><span class="menuIcon"><img src="../assets/img/hambContacto.png" alt=""></span>Contacto</p></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Switch toggler para modo oscuro ------------------------------------------------------------------------------------>
+  <div class="wrapper">
+    <input type="checkbox" name="checkbox" class="switch" id="theme-toggle" checked>
+  </div>
+
+  <!-- NAV Desktop ----------------------------------------------------------------------------------------------------------->
+
+  <section class="headerPages">
+    <header>
+      <nav class="coverLinks" id="navTop">
+        <ul class="linkUnderlined">
+          <li><a href="producto.html">Productos</a></li>
+          <li class="linkInicio"><a href="aboutus.html">Sobre nosotros</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="headerLogo justify-content-center d-flex flex-column align-items-center">
+      <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="m-5"></a>
+      <div class="coverTexto text-center animate__animated animate__fadeInUp animate__delay-1s">
+        <h1>Sobre nosotros</h1>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- Video top ------------------------------------------------------------------------------------------------------->
+    <section class="video d-flex justify-content-center align-items-center overflow-hidden mt-5 mb-5">
+      <video autoplay muted loop class="d-flex m-auto">
+        <source src="../assets/video/video.mp4" type="video/mp4">
+      </video>
+      <div class="videoTexto text-center position-absolute text-light">
+        <h2>SUSTENTABILIDAD</h2>
+      </div>
+    </section>
+
+    <!-- Texto Acerca de nosotros ---------------------------------------------------------------------------------------->
+    <section class="aboutUs mx-auto align-items-center">
+      <p class="faq0texto text-center">
+        Bienvenidos a Legioma natural, tu destino para la belleza natural y saludable. <br>
+        Nos enorgullece ofrecerte una amplia gama de productos cosméticos naturales, creados con pasión y dedicación <br>para cuidar tu piel de la manera más suave y efectiva posible.
+      </p>
+      <img class="faq1img mx-auto" src="../assets/img/aboutus1.jpg" alt="Productos naturales">
+      <div class="faq1texto rounded">
+        <h3 class="m-5">Ingredientes de calidad</h3>
+        <p class="m-2 m-sm-3 m-md-5">
+          En Legioma natural, creemos en la belleza que proviene de la naturaleza. Nuestro compromiso es
+          proporcionar productos que te hagan sentir bien tanto por dentro como por fuera, utilizando ingredientes
+          naturales de alta calidad cuidadosamente seleccionados.
+        </p>
+      </div>
+      <img class="faq2img mx-auto" src="../assets/img/aboutus2.jpg" alt="Productos naturales">
+      <div class="faq2texto rounded">
+        <h3 class="m-5">Sin químicos</h3>
+        <p class="m-2 m-sm-3 m-md-5">
+        Nos esforzamos por mantener nuestros productos libres de
+        químicos agresivos, toxinas y ingredientes sintéticos dañinos, para que puedas disfrutar de una experiencia de
+        cuidado personal segura y confiable.
+        </p>
+      </div>
+      <img class="faq3img mx-auto" src="../assets/img/aboutus3.jpg" alt="Productos naturales">
+      <div class="faq3texto rounded">
+        <h3 class="m-5">Envases sustentables</h3>
+        <p class="m-2 m-sm-3 m-md-5">
+          Nos comprometemos a utilizar envases y embalajes
+          eco-amigables, minimizando así nuestro impacto en el medio ambiente. Podrás encontrar además, muchos accesorios hechos con productos biodegradables y amigables con el planeta.
+        </p>
+      </div>
+      <img class="faq4img mx-auto" src="../assets/img/aboutus4.jpg" alt="Productos naturales">
+      <div class="faq4texto rounded">
+        <h3 class="m-5">Nuestro compromiso</h3>
+        <p class="m-2 m-sm-3 m-md-5">
+          Queremos que te sientas
+          maravillosamente bien al usar nuestros productos y que disfrutes de una experiencia que va más allá de los
+          resultados visibles en tu piel. Nuestro objetivo es que cada momento que te dediques, sea una
+          oportunidad para nutrir tu cuerpo, tu mente y tu espíritu.
+        </p>
+      </div>
+      <img class="faq5img mx-auto" src="../assets/img/crueltyfree.png" alt="Cruelty free logo">
+      <div class="faq5texto rounded">
+        <h3 class="m-5">Apto Vegan</h3>
+        <p class="m-2 m-sm-3 m-md-5">
+          Creemos que la belleza puede ser alcanzada sin causar sufrimiento, y nos esforzamos por marcar la diferencia en la industria al proporcionar productos que son amigables tanto para ti como para los animales. 
+        </p>
+      </div>
+      
+      <div class="shadow w-100 d-flex flex-column mx-auto justify-content-center faqProfile mb-5">
+        <img class="faq6img rounded-circle mt-2 mt-sm-3 mt-md-5 mx-auto" src="../assets/img/profile.jpg" alt="Foto de perfil">
+        <p class="faq6texto text-center m-2 m-sm-3 m-md-5 lead">
+          Gracias por visitar Legioma natural. Esperamos que disfrutes explorando nuestra gama de productos
+          naturales y que encuentres aquellos que se adapten perfectamente a tus necesidades. Si tienes alguna pregunta o
+          necesitas asesoramiento, no dudes en contactarnos. Únete a nosotros en
+          este viaje hacia una belleza auténtica y sostenible.
+        </p>
+      </div>
+    </section>
+
+    <!-- Incono Whats App + Scroll to the top ------------------------------------------------------------------¡---------------->
+    <div class="whatsappIcon">
+      <a href="#home"><img src="../assets/img/scrollup.svg" alt="Icono para hacer scroll hasta el top de la página" id="scrollTop"></a>
+      <a href="https://wa.me/5493416601395"><img src="../assets/img/WhatsApp_icon.png" alt="Icono Whats App" id="wppIcon"></a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER ----------------------------------------------------------------------------------------------------------------->
+  <footer>
+
+    <section class="footerMenu">
+
+      <div class="footerLogo">
+        <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo de Legioma"></a>
+      </div>
+
+      <div class="footerLinks">
+        <ul>
+          <li><a href="../pages/producto.html">Productos</a></li>
+          <li><a href="../pages/aboutus.html">Sobre nosotros</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../pages/faq.html">Preguntas frecuentes</a></li>
+          <li><a href="../pages/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footerBottom">
+        <hr>
+        <p>Todos los derechos reservados &copy; 2023 | Legioma</p>
+        <p class="poweredBy">Web diseñada por Sebastián Lategano</p>
+      </div>
+
+      <div class="redesSociales">
+        <a href="https://www.facebook.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a>
+        <a href="https://www.whatsapp.com" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+          </svg>
+        </a>
+      </div>
+
+    </section>
+
+  </footer>
+
+  <!-- SCRIPT BS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Link a archivo script.js -->
+  <script src="../script.js"></script>
+
+</body>
+
+</html>

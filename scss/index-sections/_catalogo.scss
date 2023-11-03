@@ -1,0 +1,52 @@
+/* Productos destacados ----------------------------------------------------------------------------------------*/
+.catalogo {
+    width: 80%;
+    max-width: 1400px;
+    margin-top: 100px;
+
+
+    .dontOverflow {
+      overflow: hidden;
+      max-width: 300px;
+      max-height: 300px;
+      margin: 0 auto;
+  
+      .catalogoImagen {
+        transition: 1s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  
+    .carrito {
+      @include medidas(30px,30px);
+      transition: 0.5s ease;
+      &:hover {
+        filter: brightness(0.75);
+      }
+    }
+  
+  }
+  
+  .lineaSubrayadoMarron {
+    @include fjcenter;
+    margin: 0 auto;
+    color: $colorMarron;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  .tarjetaSpan1 {
+    color: $colorMarron;
+  }
+  
+  .tarjetaSpan2 {
+    color: $colorVerdeOscuro;
+  }
+
+  .tarjetaSpan3 {
+    color: $colorRosa;
+  }
+
+

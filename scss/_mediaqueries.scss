@@ -1,0 +1,364 @@
+/* MEDIA QUERIES (RESPONSIVE) */
+/* ------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 1280px) {
+  .tarjetaTexto {
+    font-size: 2.5rem;
+  }
+
+  .contactoFormulario {
+    padding: 100px;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .contactoFormulario {
+    width: 100%;
+  }
+
+  .contactoInfo {
+    max-width: 100%;
+  }
+
+  .wrapper {
+    right: -50px;
+  }
+
+  .contactoFormulario {
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .tarjetaImagen img {
+    margin: 50px;
+  }
+
+  .contacto, .mapa {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .contacto {
+    flex-direction: column;
+  }
+
+  .contacto, .mapa {
+    width: 90%;
+  }
+
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    grid-row-gap: 0px;
+  }
+
+  .faq1texto, .faq2texto, .faq3texto, .faq4texto, .faq5texto {
+    margin-top: 20px;
+    margin-bottom: 150px;
+  }
+
+  .faq1img {
+    margin-top: 150px;
+  }
+
+  .tarjetaImagen img {
+    margin-top: 50px;
+  }
+
+  input.switch {
+      transform: scale(0.40);
+  }
+
+  .wrapper {
+    right: -95px;
+  }
+
+  .categoriasSelector {
+    .categoria1 , .categoria2 , .categoria3, .categoria4, .categoria5 {
+    &:hover {
+      flex-basis: 50%;
+    }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .informativoTexto h3 {
+    width: 245px;
+  }
+
+  .coverZoom {
+    height: 100vh;
+  }
+
+  .coverLogo img {
+    height: 177px;
+  }
+
+  .coverTexto h1, .coverTexto h2 {
+    font-size: 3.125rem;
+  }
+
+  .coverTexto p {
+    font-size: 1.875rem;
+  }
+
+  .hambScroll {
+    display: none;
+    visibility: hidden;
+  }
+
+  #hambTop {
+    display: none;
+    visibility: hidden;
+  }
+
+  .menuHamburguesa {
+    display: none;
+    visibility: hidden;
+  }
+
+  #nombre, #email, #genero, #mensaje {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    right: -60px;
+  }
+
+  #nombre, #email, #genero, #mensaje {
+    width: 100%;
+  }
+
+  .coverLinks {
+    display: none;
+    visibility: hidden;
+  }
+
+  .scroll {
+    display: none;
+    visibility: hidden;
+  }
+
+  .footerLinks {
+    display: none;
+    visibility: hidden;
+  }
+
+  .coverZoom {
+    height: 100vh;
+  }
+  
+  .coverTexto {
+    width: 100%;
+  }
+
+  .coverTexto h1, .coverTexto h2 {
+    font-size: 1.875rem;
+    text-align: center;
+  }
+
+  .coverTexto p {
+    font-size: 0.938rem;
+    text-align: center;
+  }
+
+  .videoYouTube {
+    flex-direction: column-reverse;
+  }
+
+  .ytImagenFondo {
+    margin: 0 auto;
+  }
+
+  .botonPopUp {
+    width: 50px;
+    height: 50px;
+  }
+
+  .botonPopUp a {
+    font-size: 1.563rem;
+  }
+
+  .whatsappIcon {
+    bottom: 6%;
+    right: 5%;
+  }
+
+  #scrollTop {
+    bottom: 15%;
+    right: 5%;
+  }
+
+  .video h2 {
+    font-weight: 500;
+    font-size: 1.563rem;
+  }
+
+  .coverLogo img {
+    height: 100px;
+  }
+
+  .tarjetaImagen img {
+    margin-top: 12px;
+  }
+
+  .cover2, .cover3 {
+    width: 70%;
+  }
+
+  .categoriasSelector {
+    .categoria1 , .categoria2 , .categoria3, .categoria4, .categoria5 {
+    &:hover {
+      flex-basis: 80%;
+    }
+    }
+  }
+
+  .catalogo {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  input.switch {
+      transform: scale(0.40);
+  }
+  .contactoFormulario {
+    padding: 60px;
+  }
+}
+
+
+@media only screen and (min-width: 481px) {
+  .tarjetaTexto {
+    margin-top: 50px;
+  }
+
+  .faq details p {
+    font-size: 1.125rem;
+  }
+
+  .coverMobile {
+    display: none;
+  }
+
+  .faq1texto, .faq2texto, .faq3texto, .faq4texto, .faq5texto {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .coverDesktop {
+    display: none;
+  }
+
+  .separador p {
+    font-size: 1.125rem;
+  }
+
+  .informativo {
+    padding: 0;
+  }
+
+  .tarjetasCaja {
+    padding: 0px;
+  }
+
+  .botonMarron button, .botonVerde button, .botonRosa button {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0px;
+  }
+
+  .tarjetaTexto {
+    font-size: 1.875rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .tarjetaSpan1 {
+    font-size: 1.875rem;
+  }
+
+  .corrector {
+    padding: 0;
+  }
+
+  .informativoIcono img {
+    margin: 10px;
+  }
+
+  .informativoTexto p {
+    font-size: 0.75rem;
+  }
+
+  .informativoTexto h3 {
+    width: 196px;
+  }
+
+  .categoriasSelector {
+    .categoria1 , .categoria2 , .categoria3, .categoria4, .categoria5 {
+    &:hover {
+      flex-basis: 150%;
+    }
+    }
+  }
+  
+  .contactoFormulario {
+    padding: 60px;
+  }
+
+  .tarjetaImagen {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+.tarjetaDescripcion {
+  padding: 20px;
+}
+
+  .informativo, .insta, .resenias, .categoriasSelector, .tarjetas, .faq {
+    width: 90%;
+  }
+
+}
+
+@media only screen and (max-width: 365px) {
+  .menuHamburguesa, .hambScroll {
+    .menuEnlaces p {
+      padding: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 0.875rem;
+    }
+  }
+
+  .faq details summary {
+    font-size: 0.938rem;
+  }
+
+  .categoriasSelector {
+    .categoria1 , .categoria2 , .categoria3, .categoria4, .categoria5 {
+    &:hover {
+      flex-basis: 150%;
+    }
+    }
+  }
+
+  .contactoFormulario {
+    padding: 20px;
+  }
+
+  .contacto, .mapa {
+    width: 95%;
+  }
+}

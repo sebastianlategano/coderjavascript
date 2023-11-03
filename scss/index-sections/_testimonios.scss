@@ -1,0 +1,41 @@
+/* Sección testimonios ----------------------------------------------------------------------------------------- */
+.resenias {
+  margin-top: 1500px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.testimonios .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    p {
+      margin-right: 0.75rem;
+      margin-left: 0.75rem;
+    }
+  }
+  
+.testimonios {
+  .testimoniosImg {
+    @include medidas(100px,100px);
+    margin: 20px;
+  }
+
+  .estrellas {
+    @include medidas(99px,30px);
+    margin: 10px;
+  }
+}
+
+.participa {
+  font-weight: 500;
+  color: $colorGrisOscuro;
+}
+
+.lineaSubrayadoRosa {
+  @include fjcenter;
+  margin: 0 auto;
+  color: $colorRosa;
+  font-weight: 700;
+  margin-bottom: 50px;
+}

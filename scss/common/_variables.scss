@@ -1,0 +1,21 @@
+$colorRosa: #e7acaa;
+$colorMarron: #e2b995;
+$colorVerdeClaro: #eae9e4;
+$colorVerdeMedio: #d3e0ce;
+$colorVerdeOscuro: #9cb8a0;
+$colorGrisClaro: #f5f5f5;
+$colorGrisOscuro: #3c3c3c;
+$colorMarronHover: #f5c8a1;
+$colorVerdeHover: #b5d7ba;
+$colorRosaHover: #fcbcba;
+$colorBlanco: white;
+
+@mixin medidas($ancho, $alto){
+  width: $ancho;
+  height: $alto;
+}
+
+@mixin fjcenter {
+  display: flex;
+  justify-content: center;
+}

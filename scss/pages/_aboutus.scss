@@ -1,0 +1,103 @@
+/* PÁGINA "SOBRE DE NOSOTROS" */
+/* ------------------------------------------------------------------------------- */
+
+.video {
+  max-height: 450px;
+
+  .video h2 {
+    font-weight: 700;
+    font-size: 3.75rem;
+  }
+}
+
+.aboutUs {
+  max-width: 1200px;  
+  display: grid;
+  grid-row-gap: 150px;
+  grid-template-areas:
+    "txt0 txt0"
+    "txt1 img1"
+    "img2 txt2"
+    "txt3 img3"
+    "img4 txt4"
+    "txt5 img5"
+    "prof prof";
+
+  .faq0texto {
+    grid-area: txt0;
+    font-style: italic;
+  }
+
+  .faq1texto {
+    grid-area: txt1;
+    box-shadow:
+      #e7acaa 10px 11px 0px,
+      rgba(0, 0, 0, 0.25) 4px 4px 0px;
+      border-top: 1px solid #e7acaa;
+      border-left: 1px solid #e7acaa;
+  }
+
+  .faq2texto {
+    grid-area: txt2;
+    box-shadow:
+      #e2b995 10px 11px 0px,
+      rgba(0, 0, 0, 0.25) 4px 4px 0px;
+    border-top: 1px solid #e2b995;
+    border-left: 1px solid #e2b995;
+  }
+
+  .faq3texto {
+    grid-area: txt3;
+    box-shadow:
+      #eae9e4 10px 11px 0px,
+      rgba(0, 0, 0, 0.25) 4px 4px 0px;
+    border-top: 1px solid #eae9e4;
+    border-left: 1px solid #eae9e4;
+  }
+
+  .faq4texto {
+    grid-area: txt4;
+    box-shadow:
+      #d3e0ce 10px 11px 0px,
+      rgba(0, 0, 0, 0.25) 4px 4px 0px;
+    border-top: 1px solid #d3e0ce;
+    border-left: 1px solid #d3e0ce;
+  }
+
+  .faq5texto {
+    grid-area: txt5;
+    box-shadow:
+      #9cb8a0 10px 11px 0px,
+      rgba(0, 0, 0, 0.25) 4px 4px 0px;
+    border-top: 1px solid #9cb8a0;
+    border-left: 1px solid #9cb8a0;
+  }
+
+
+
+  .faq1img, .faq2img, .faq3img, .faq4img, .faq5img {
+    width: 300px;
+    border-radius: 25px;
+  }
+
+  .faq6img {
+    width: 150px;
+    border: 3px solid #e7acaa;
+    border-style: dashed;
+    vertical-align: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  /*Utilización de un for -------------------------------------------------------------------------------------*/
+  @for $i from 1 through 6 {
+    .faq#{$i}img {
+      grid-area: img#{$i};
+    }
+  }
+
+  .faqProfile {
+    grid-area: prof;
+    border-radius: 25px;
+  }
+}

@@ -1,0 +1,48 @@
+/* PÁGINA "CONTACTO" */
+/* ------------------------------------------------------------------------------- */
+
+.contacto, .mapa {
+  max-width: 1400px;
+}
+
+.contactoFormulario {
+  background-color: $colorVerdeClaro;
+  width: 65%;
+}
+
+.contactoFormulario h2 {
+  font-family: "Pacifico", cursive;
+}
+
+form div textarea {
+  height: 100px;
+}
+
+#genero,
+#suscribirse,
+::placeholder {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: $colorGrisOscuro;
+}
+
+.contactoInfo {
+  max-width: 35%;
+  background-color: $colorRosa;
+  color: white;
+}
+
+.contactoInfo ul li {
+  width: 100%;
+  list-style-type: none;
+}
+
+.contactoInfo img {
+  max-width: 20px;
+  max-height: 20px;
+  margin: 5px;
+}
+
+.mapa {
+  max-width: 1400px;
+}

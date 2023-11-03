@@ -1,0 +1,91 @@
+/* FOOTER (Common para todas las pages) -------------------------------------------------------------------------*/
+footer {
+  margin-top: 150px;
+  a {
+    transition: all 0.5s ease-out;
+    &:visited {
+      text-decoration: none;
+      color: white;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $colorGrisOscuro;
+    }
+    &:link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+/* Flechita up ------------------------------------------------------------------------------------------------*/
+.flechita {
+  a {
+    transition: all 0.5s ease-out;
+
+    .flechitaFondo {
+      background-color: $colorRosa;
+      h2 {
+        font-size: 2.188rem;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $colorGrisOscuro;
+    }
+  }
+}
+
+/* Redes sociales footer ---------------------------------------------------------------------------------------*/
+
+.redesFooter {
+  @include fjcenter;
+  gap: 30px;
+  margin: 30px;
+  a img {
+    width: 50px;
+  }
+}
+
+/* Menu de links en footer -------------------------------------------------------------------------------------*/
+.footerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $colorRosa;
+
+  .footerLogo {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    a img {
+      width: 50%;
+      
+    }
+  }
+
+  .footerLinks ul li {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .footerBottom {
+    text-align: center;
+    opacity: 0.5;
+  }
+  .poweredBy {
+    font-size: 12px;
+  }
+  .redesSociales svg{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    filter: invert(100%) sepia(3%) saturate(659%) hue-rotate(152deg) brightness(116%) contrast(92%);
+  }
+}

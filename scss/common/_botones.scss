@@ -1,0 +1,39 @@
+.botonMarron, .botonVerde, .botonRosa {
+  @include fjcenter;
+}
+
+.botonMarron button, .botonVerde button, .botonRosa button {
+  color: $colorBlanco;
+  padding-left: 100px;
+  padding-right: 100px;
+  border: none;
+}
+
+.botonMarron button {
+  background-color: $colorMarron;
+}
+
+.botonVerde button {
+  background-color: $colorVerdeOscuro;
+}
+
+.botonRosa button {
+  background-color: $colorRosa;
+}
+
+.botonMarron button:hover, .botonVerde button:hover, .botonRosa button:hover {
+  color: $colorBlanco;
+  border: none;
+}
+
+.botonMarron button:hover {
+  background-color: $colorMarronHover;
+}
+
+.botonVerde button:hover {
+  background-color: $colorVerdeHover;
+}
+
+.botonRosa button:hover {
+  background-color: $colorRosaHover;
+}

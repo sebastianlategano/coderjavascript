@@ -1,0 +1,133 @@
+:root[data-theme=darktheme] {
+    color-scheme: dark;
+    body {
+    background-color: black;
+    color: white;
+    }
+    .informativo, .separador, .flechitaFondo, .footerMenu, .tarjetasCaja, .scroll, .menuEnlaces, .hambScroll, div.menuCerrar, div.popup , 
+    .popupTexto, .faqProfile, .faq1texto, .faq2texto, .faq3texto, .faq4texto, .faq5texto, .faq, .contactoFormulario {
+        background-color: $colorGrisOscuro;
+    }
+    
+    .coverLinks, .scroll, .headerPages {
+        .linkUnderlined a {
+          display: inline-block;
+          padding: 5px 0;
+          position: relative;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: all 0.3s ease-in-out;
+          font-weight: 700;
+          background: {
+            size: 200% 100%;
+            position: -100%;
+            clip: text;
+            image: linear-gradient(
+            to right,
+            $colorVerdeOscuro,
+            $colorVerdeOscuro 50%,
+            $colorBlanco 50%
+          );
+          }
+      
+          &:before {
+            content: "";
+            background: $colorVerdeOscuro;
+            display: block;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            @include medidas(0,3px);
+            transition: all 0.3s ease-in-out;
+          }
+      
+          &:hover {
+            background-position: 0;
+          }
+      
+          &:hover::before {
+            width: 100%;
+          }
+        }
+      
+        /* Diferente para la pagina active */
+        .linkInicio a {
+          background-image: linear-gradient(
+            to right,
+            $colorBlanco,
+            $colorBlanco 50%,
+            $colorVerdeOscuro 50%
+          );
+        }
+    }
+
+    .coverLinks, .menuHamburguesa {
+    background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .recuadro {
+    z-index: 0;
+    }
+
+    .linkComun, .popup , .popupTexto button, #genero, #suscribirse, ::placeholder, .separador, .participa {
+    color: $colorBlanco;
+    }
+
+    #menuImg {
+    filter: brightness(2000%);
+    }
+
+    footer {
+    a {
+        &:hover {
+        text-decoration: none;
+        color: $colorRosa;
+        }
+    }
+    }
+
+    .coverZoom {
+    filter: brightness(50%);
+    transition: 0.5s ease;
+    }
+
+    .coverTexto h1 , .coverTexto h2 {
+    color: $colorGrisClaro;
+    transition: 0.5s ease;
+    }
+
+
+
+    .indexContacto {
+        background: {
+          image: url(../assets/img/indexContactoDark.jpg);
+        }
+    }
+
+    .headerPages {
+        background: {
+          image: url(../assets/img/coverpagesDark.jpg);
+        }
+      }
+    
+    .detalles {
+        background-color: black;
+    }
+
+    input, select, textarea {
+        background-color: rgb(95, 95, 95);
+    }
+
+    #scrollTop {
+      filter: invert(100%) sepia(3%) saturate(659%) hue-rotate(152deg) brightness(116%) contrast(92%);
+    }
+
+
+    .separador {
+      color: $colorBlanco;
+      div img {
+        filter: none;
+      }
+}
+
+}

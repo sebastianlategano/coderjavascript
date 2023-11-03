@@ -1,0 +1,116 @@
+/* Tarjetas promoción y acerca de nosotros --------------------------------------------------------------------------*/
+.tarjetas {
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+  
+    .tarjetasCaja {
+      margin: 0 auto;
+  
+      .tarjetaImagen {
+        display: flex;
+        align-items: center;
+      }
+  
+      .tarjetaTexto {
+        letter-spacing: -0.05rem;
+        text-align: center;
+        font-weight: 700;
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /* Sección video YouTube ----------------------------------------------------------------------------------------------- */
+.ytIzq {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+
+  .recuadro {
+    @include fjcenter;
+    position: relative;
+    align-items: center;
+    z-index: -1;
+
+  }
+
+  .botonPopUp {
+    @include fjcenter;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    @include medidas (120px,120px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .cobertor {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    &:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 0 auto;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      padding: 20px;
+      background: $colorGrisClaro;
+      max-width: 600px;
+      position: relative;
+      transition: all 5s ease-in-out;
+
+      .popupTexto button {
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 1.875rem;
+        font-weight: bold;
+      }
+
+      .conteindoPopUp {
+        @include fjcenter;
+      }
+
+    }
+
+  }
+
+}
+
+.popup, .cerrar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  transition: all 200ms;
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: $colorGrisOscuro;
+}
+
+.popupTexto, .cerrar {
+  display: flex;
+  justify-content: space-between;
+}

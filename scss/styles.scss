@@ -1,0 +1,39 @@
+/* SASS - FOR: En el archivo pages/_aboutus.scss uso un "for", en las últimas líneas */
+
+@import "common/variables", "common/botones", "common/header", "common/footer", "common/toggler";
+@import "themes/darktheme";
+
+@import "pages/productos", "pages/aboutus", "pages/faq", "pages/contacto";
+@import "index-sections/separador", "index-sections/catalogo", "index-sections/informativo", "index-sections/tarjetas", 
+"index-sections/testimonios", "index-sections/indexContacto", "index-sections/insta", "index-sections/whatsAppIcon", "index-sections/categories";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1920px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@import "mediaqueries";
+
+
+/* Modificacion del animate.css*/
+.animate__animated.animate__fadeInDown {
+  --animate-duration: 6s;
+}
+
+:root {
+  --animate-delay: 0.2s;
+}
+
+.elemento-con-delay {
+  animation-delay: 0.3s;
+}
+
+.elemento-oculto,
+.elemento-con-delay {
+  visibility: hidden;
+  opacity: 0;
+}

@@ -1,0 +1,26 @@
+.indexContacto {
+  width: 80%;
+  max-width: 1400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  background: {
+    image: url(../assets/img/indexContacto.jpg);
+    size: cover;
+    position: center;
+  }
+  p {
+    text-shadow: 1px;
+    background-color: rgba(0, 0, 0, 0.153);
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+    font: {
+      weight: 700;
+      size: 1.563rem;
+    }
+  }
+  }
+  
