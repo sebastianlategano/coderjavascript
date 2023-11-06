@@ -117,3 +117,213 @@ themeToggle.addEventListener("change", () => {
     }
   }
 });
+
+//Animacion solo cuando es pulsado el boton
+let togglerAnimation = document.querySelector("div.wrapper");
+
+document.addEventListener("keydown", function(e) {
+  togglerAnimation.classList.add('switch:after')
+})
+togglerAnimation.addEventListener("animationend", function(e) {
+  togglerAnimation.classList.remove('switch:after')
+});
+
+//Mostrar-Ocultar carrito
+const btnCart = document.querySelector('.container-cart-icon');
+const containerCartProducts = document.querySelector('.container-cart-products');
+
+btnCart.addEventListener('click', () => {
+    containerCartProducts.classList.toggle('hidden-cart');
+});
+
+//Carrito
+const cartInfo = document.querySelector('cart-product');
+const rowProduct = document.querySelector('.row-product');
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.cart-total');
+
+//Lista de todos los contenedores de productos
+const productsList = document.querySelector('.catalogo');
+
+//Variable de arreglos de productos
+let allProducts = [];
+
+const valorTotal = document.querySelector('.total-pagar');
+const countProducts = document.querySelector('#contador-productos');
+
+productsList.addEventListener('click', e => {
+  if(e.target.classList.contains('carrito')){
+    const product = e.target.parentElement.parentNode;
+
+    const infoProduct = {
+      quantity: 1,
+      title: product.querySelector('h3').textContent,
+      price: product.querySelector('.precio').textContent,
+    };
+
+    Toastify({
+      text: "Producto agregado",
+      offset: {
+        x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        y: 50 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      },
+      duration: 1000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #e7acaa, #e2b995)",
+      },
+    }).showToast();
+
+    const exists = allProducts.some(product => product.title === infoProduct.title);
+    
+    if (exists) {
+      const products = allProducts.map(product => {
+        if (product.title === infoProduct.title){
+          product.quantity++;
+          return product;
+        } else {
+          return product;
+        }
+      });
+      allProducts = [...products];
+    } else {
+      allProducts = [...allProducts, infoProduct];
+    }
+
+    showHTML();
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(allProducts));
+  }
+});
+
+window.addEventListener('load', () => {
+  const savedCart = localStorage.getItem('carrito');
+
+  if (savedCart) {
+    allProducts = JSON.parse(savedCart);
+    showHTML();
+  }
+});
+
+rowProduct.addEventListener('click', e => {
+	if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
+
+    allProducts = allProducts.filter(
+      product => product.title !== title
+      );
+      showHTML();
+  }
+});
+
+//Funcion para mostrar HTML
+const showHTML = () => {
+
+
+	if (!allProducts.length) {
+		cartEmpty.classList.remove('hidden-cart');
+		rowProduct.classList.add('hidden-cart');
+		cartTotal.classList.add('hidden-cart');
+	} else {
+		cartEmpty.classList.add('hidden-cart');
+		rowProduct.classList.remove('hidden-cart');
+		cartTotal.classList.remove('hidden-cart');
+	}
+
+  //Limpair carrito
+  rowProduct.innerHTML = '';
+
+  let total = 0;
+  let totalOfProducts = 0;
+
+  allProducts.forEach(product => {
+    const containerProduct = document.createElement('div');
+    containerProduct.classList.add('cart-product');
+    
+    containerProduct.innerHTML = `
+    <div class="info-cart-product">
+      <span class="cantidad-producto-carrito">${product.quantity}</span>
+      <div class="controls">
+          <button id="btnAdd" class="buttonsQuantity">+</button>
+          <button id="btnRemove" class="buttonsQuantity">-</button>
+      </div>
+      <p class="titulo-producto-carrito">${product.title}</p>
+      <span class="precio-producto-carrito">$${product.quantity * product.price.slice(1)}</span>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    
+    `;
+    
+    rowProduct.append(containerProduct);
+    total = total + parseInt(product.quantity * product.price.slice(1));
+    totalOfProducts = totalOfProducts + product.quantity;
+  });
+
+  valorTotal.innerText = `$${total}`;
+  countProducts.innerText = totalOfProducts;
+};
+
+//Cerrar carrito si se hace click afuera
+document.addEventListener('click', function (event) {
+  if (!containerCartProducts.contains(event.target) && !btnCart.contains(event.target) && !event.target.classList.contains('icon-close') && !event.target.classList.contains('buttonsQuantity')) {
+      containerCartProducts.classList.add('hidden-cart');
+  }
+});
+
+
+
+// Evento confirmar compra
+const btnConfirmarCompra = document.getElementById("btnConfirmarCompra");
+
+btnConfirmarCompra.addEventListener("click", () => {
+      Swal.fire({
+        title: "Muchas gracias!",
+        text: "Tu compra ha sido realizada",
+        icon: "success",
+        confirmButtonColor: "#3085d6",
+      });
+      containerCartProducts.classList.add('hidden-cart');
+
+      allProducts = [];
+      showHTML();
+      localStorage.setItem("carrito", JSON.stringify(allProducts));
+    }
+);
+
+
+
+rowProduct.addEventListener('click', e => {
+  if (e.target.classList.contains('buttonsQuantity')) {
+    const productId = e.target.parentElement.parentElement.parentElement.querySelector('.titulo-producto-carrito').textContent;
+
+    if (e.target.id === 'btnAdd') {
+      // Busca el producto por su título
+      const product = allProducts.find(product => product.title === productId);
+      
+      if (product) {
+        product.quantity++;
+      }
+    } else if (e.target.id === 'btnRemove') {
+      // Implementa la lógica para disminuir la cantidad si se presiona el botón "-"
+      const product = allProducts.find(product => product.title === productId);
+      
+      if (product && product.quantity > 1) {
+        product.quantity--;
+      }
+    }
+
+    showHTML();
+    // Actualiza el carrito en el localStorage
+    localStorage.setItem('carrito', JSON.stringify(allProducts));
+  }
+});
+

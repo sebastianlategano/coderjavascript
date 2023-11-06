@@ -37,3 +37,74 @@
 .botonRosa button:hover {
   background-color: $colorRosaHover;
 }
+
+.btn-add-cart {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+  .btn-confirmar-compra, .buttonsQuantity {
+    appearance: none;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+
+  .btn-confirmar-compra {
+    padding: 6px 16px;
+  }
+
+  .buttonsQuantity {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Menlo', 'Lucida Console', 'Monaco', 'Consolas', monospace;
+  }
+  
+  .btn-confirmar-compra:hover, .buttonsQuantity:hover {
+    background-color: #F3F4F6;
+    text-decoration: none;
+    transition-duration: 0.1s;
+  }
+  
+  .btn-confirmar-compra:disabled, .buttonsQuantity:disabled {
+    background-color: #FAFBFC;
+    border-color: rgba(27, 31, 35, 0.15);
+    color: #959DA5;
+    cursor: default;
+  }
+  
+  .btn-confirmar-compra:active, .buttonsQuantity:active {
+    background-color: #EDEFF2;
+    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+    transition: none 0s;
+  }
+  
+  .btn-confirmar-compra:focus, .buttonsQuantity:focus {
+    outline: 1px transparent;
+  }
+  
+  .btn-confirmar-compra:before, .buttonsQuantity:before {
+    display: none;
+  }
+  
+  .btn-confirmar-compra:-webkit-details-marker, .buttonsQuantity:-webkit-details-marker {
+    display: none;
+  }

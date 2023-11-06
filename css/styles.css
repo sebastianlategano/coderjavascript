@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* SASS - FOR: En el archivo pages/_aboutus.scss uso un "for", en las últimas líneas */
 .botonMarron, .botonVerde, .botonRosa {
   display: flex;
   justify-content: center;
@@ -39,6 +38,77 @@
 
 .botonRosa button:hover {
   background-color: #fcbcba;
+}
+
+.btn-add-cart {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.btn-confirmar-compra, .buttonsQuantity {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  list-style: none;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.btn-confirmar-compra {
+  padding: 6px 16px;
+}
+
+.buttonsQuantity {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Menlo", "Lucida Console", "Monaco", "Consolas", monospace;
+}
+
+.btn-confirmar-compra:hover, .buttonsQuantity:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.btn-confirmar-compra:disabled, .buttonsQuantity:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.btn-confirmar-compra:active, .buttonsQuantity:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.btn-confirmar-compra:focus, .buttonsQuantity:focus {
+  outline: 1px transparent;
+}
+
+.btn-confirmar-compra:before, .buttonsQuantity:before {
+  display: none;
+}
+
+.btn-confirmar-compra:-webkit-details-marker, .buttonsQuantity:-webkit-details-marker {
+  display: none;
 }
 
 /* Menu hamburguesa, solo resoluciones bajas ---------------------------------------------------------*/
@@ -267,6 +337,127 @@
   font-size: 3rem;
 }
 
+.icon-cart {
+  width: 40px;
+  position: fixed;
+  top: 30px;
+  right: 140px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+.icon-cart:hover {
+  cursor: pointer;
+}
+
+.icon-close {
+  width: 25px;
+}
+
+.cointainer-icon {
+  position: relative;
+}
+
+.count-products {
+  position: fixed;
+  top: 35px;
+  right: 150px;
+  background-color: black;
+  color: white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.container-cart-products {
+  position: fixed;
+  top: 52px;
+  right: 150px;
+  background-color: white;
+  width: 470px;
+  z-index: 5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.cart-product {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.info-cart-product {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 0.8;
+  text-align: center;
+  justify-content: baseline;
+}
+
+.info-cart-product p {
+  margin-bottom: 0px;
+}
+
+.titulo-producto-carrito {
+  font-size: 15px;
+}
+
+.precio-producto-carrito {
+  font-weight: 700;
+  font-size: 15px;
+  align-items: 10px;
+}
+
+.cantidad-producto-carrito {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.cart-total h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.total-pagar {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.icon-close {
+  width: 40px;
+  transition: 0.3s ease;
+}
+.icon-close:hover {
+  stroke: grey;
+  cursor: pointer;
+}
+
+.hidden-cart {
+  display: none;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 70px;
+}
+
+.initial-cart {
+  display: hidden;
+}
+
 /* Keyframes para el efecto zoom del cover del index */
 /* ------------------------------------------------------------------------------- */
 @keyframes zoom-in-zoom-out {
@@ -373,7 +564,7 @@ input.switch {
   height: 100px;
   position: fixed;
   top: 60px;
-  right: 50px;
+  right: 150px;
   transform: translate(-50%, -50%);
   z-index: 5;
 }
@@ -533,6 +724,10 @@ input.switch {
 :root[data-theme=darktheme] .informativo, :root[data-theme=darktheme] .separador, :root[data-theme=darktheme] .flechitaFondo, :root[data-theme=darktheme] .footerMenu, :root[data-theme=darktheme] .tarjetasCaja, :root[data-theme=darktheme] .scroll, :root[data-theme=darktheme] .menuEnlaces, :root[data-theme=darktheme] .hambScroll, :root[data-theme=darktheme] div.menuCerrar, :root[data-theme=darktheme] div.popup,
 :root[data-theme=darktheme] .popupTexto, :root[data-theme=darktheme] .faqProfile, :root[data-theme=darktheme] .faq1texto, :root[data-theme=darktheme] .faq2texto, :root[data-theme=darktheme] .faq3texto, :root[data-theme=darktheme] .faq4texto, :root[data-theme=darktheme] .faq5texto, :root[data-theme=darktheme] .faq, :root[data-theme=darktheme] .contactoFormulario {
   background-color: #3c3c3c;
+}
+:root[data-theme=darktheme] .container-cart-products {
+  background-color: black;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 2px 5px -1px, rgba(255, 255, 255, 0.3) 0px 1px 3px -1px;
 }
 :root[data-theme=darktheme] .coverLinks, :root[data-theme=darktheme] .scroll, :root[data-theme=darktheme] .headerPages {
   /* Diferente para la pagina active */
@@ -1220,7 +1415,10 @@ body {
     max-width: 100%;
   }
   .wrapper {
-    right: -50px;
+    right: 0px;
+  }
+  .icon-cart, .container-cart-products, .count-products {
+    right: 30px;
   }
   .contactoFormulario {
     padding: 20px;
@@ -1262,10 +1460,18 @@ body {
     transform: scale(0.4);
   }
   .wrapper {
-    right: -95px;
+    left: 50px;
+  }
+  .icon-cart, .container-cart-products, .count-products {
+    right: 25px;
   }
   .categoriasSelector .categoria1:hover, .categoriasSelector .categoria2:hover, .categoriasSelector .categoria3:hover, .categoriasSelector .categoria4:hover, .categoriasSelector .categoria5:hover {
     flex-basis: 50%;
+  }
+}
+@media only screen and (max-width: 815px) {
+  .icon-cart, .container-cart-products, .count-products {
+    right: 6px;
   }
 }
 @media only screen and (min-width: 769px) {
@@ -1302,7 +1508,10 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .wrapper {
-    right: -60px;
+    left: 120px;
+  }
+  .icon-cart {
+    right: 0px;
   }
   #nombre, #email, #genero, #mensaje {
     width: 100%;
@@ -1451,6 +1660,12 @@ body {
   }
   .informativo, .insta, .resenias, .categoriasSelector, .tarjetas, .faq {
     width: 90%;
+  }
+  .container-cart-products {
+    width: 300px;
+  }
+  .titulo-producto-carrito {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 365px) {

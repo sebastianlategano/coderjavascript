@@ -8,6 +8,11 @@
     .popupTexto, .faqProfile, .faq1texto, .faq2texto, .faq3texto, .faq4texto, .faq5texto, .faq, .contactoFormulario {
         background-color: $colorGrisOscuro;
     }
+
+    .container-cart-products {
+      background-color: black;
+      box-shadow: rgba(255, 255, 255, 0.25) 0px 2px 5px -1px, rgba(255, 255, 255, 0.3) 0px 1px 3px -1px;
+    }
     
     .coverLinks, .scroll, .headerPages {
         .linkUnderlined a {
@@ -128,6 +133,8 @@
       div img {
         filter: none;
       }
+
+
 }
 
 }

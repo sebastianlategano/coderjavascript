@@ -256,6 +256,129 @@
   font-size: 3rem;
 }
 
+//Carrito de compras
+.icon-cart {
+  width: 40px;
+  position: fixed;
+  top: 30px;
+  right: 140px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.icon-close {
+width: 25px;  
+}
+
+.cointainer-icon {
+  position: relative;
+}
+
+.count-products {
+  position: fixed;
+  top:35px;
+  right: 150px;
+  background-color: black;
+  color: white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.container-cart-products {
+  position: fixed;
+  top: 52px;
+  right: 150px;
+  background-color: white;
+  width: 470px;
+  z-index: 5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.cart-product {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.info-cart-product {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 0.8;
+  text-align: center;
+  justify-content: baseline;
+}
+
+.info-cart-product p {
+  margin-bottom: 0px;
+}
+
+.titulo-producto-carrito{
+  font-size: 15px;
+}
+
+.precio-producto-carrito {
+  font-weight: 700;
+  font-size: 15px;
+  align-items: 10px;
+}
+
+.cantidad-producto-carrito {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.cart-total h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.total-pagar {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.icon-close {
+  width: 40px;
+  transition: 0.3s ease;
+  &:hover {
+    stroke: grey;
+    cursor: pointer;
+  }
+}
+
+.hidden-cart {
+  display: none;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 70px;
+}
+
+.initial-cart {
+  display: hidden;
+}
+
+
 /* Keyframes para el efecto zoom del cover del index */
 /* ------------------------------------------------------------------------------- */
 @keyframes zoom-in-zoom-out {

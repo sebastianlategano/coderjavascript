@@ -21,7 +21,11 @@
   }
 
   .wrapper {
-    right: -50px;
+    right: 0px;
+  }
+
+  .icon-cart, .container-cart-products, .count-products {
+    right: 30px;
   }
 
   .contactoFormulario {
@@ -74,7 +78,11 @@
   }
 
   .wrapper {
-    right: -95px;
+    left: 50px;
+  }
+
+  .icon-cart, .container-cart-products, .count-products {
+    right: 25px;
   }
 
   .categoriasSelector {
@@ -83,6 +91,12 @@
       flex-basis: 50%;
     }
     }
+  }
+}
+
+@media only screen and (max-width: 815px) {
+  .icon-cart, .container-cart-products, .count-products {
+    right: 6px;
   }
 }
 
@@ -129,7 +143,11 @@
 
 @media only screen and (max-width: 768px) {
   .wrapper {
-    right: -60px;
+    left: 120px;
+  }
+
+  .icon-cart {
+    right: 0px;
   }
 
   #nombre, #email, #genero, #mensaje {
@@ -326,9 +344,17 @@
   padding: 20px;
 }
 
-  .informativo, .insta, .resenias, .categoriasSelector, .tarjetas, .faq {
-    width: 90%;
-  }
+.informativo, .insta, .resenias, .categoriasSelector, .tarjetas, .faq {
+  width: 90%;
+}
+
+.container-cart-products {
+  width: 300px;
+}
+
+.titulo-producto-carrito {
+  font-size: 14px;
+}
 
 }
 

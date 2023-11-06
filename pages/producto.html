@@ -7,6 +7,7 @@
   <title>Productos</title>
   <meta name="description" content="Explora nuestra gama de productos de cosmética natural. Creados con ingredientes de calidad para realzar tu belleza de forma natural y sostenible.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="shortcut icon" href="../assets/img/favicon.png">
@@ -56,6 +57,43 @@
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
+      <!-- Carrito -->
+      <div class="container-icon">
+        <div class="container-cart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="icon-cart">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <div class="count-products">
+            <span id="contador-productos">0</span>
+          </div>
+        </div>
+        <div class="container-cart-products hidden-cart rounded">
+            <div class="row-product hidden-cart">
+              <div class="cart-product border-bottom">
+                <div class="info-cart-product">
+                  <span class="cantidad-producto-carrito">
+                    1
+                  </span>
+                  <p class="titulo-producto-carrito">Exfoliante</p>
+                  <span class="precio-producto-carrito">$10</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="icon-close">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            <div class="cart-total hidden-cart">
+              <h3>Total:</h3>
+              <span class="total-pagar">$200</span>
+              <button class="btn-confirmar-compra" id="btnConfirmarCompra">Confirmar Compra</button>
+            </div>
+          <p class="cart-empty">El carrito está vacío</p>
+        </div>
+      </div>
     </header>
     <div class="headerLogo justify-content-center d-flex flex-column align-items-center">
       <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="m-5"></a>
@@ -78,42 +116,66 @@
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/facial1.jpg" alt="Producto de la línea facial">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/facial1.jpg" alt="Producto de la línea facial">
+            </figure>
           </div>
-          <p class="mt-3 h4">Tónico facial</p>
-          <p>Floral x100cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Tónico facial</h3>
+            <p>Floral x100cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/facial2.jpg" alt="Producto de la línea facial">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/facial2.jpg" alt="Producto de la línea facial">
+            </figure>
           </div>
-          <p class="mt-3 h4">Crema humectante</p>
-          <p>Manzanilla 75cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Crema humectante</h3>
+            <p>Manzanilla 75cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/facial3.jpg" alt="Producto de la línea facial">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/facial3.jpg" alt="Producto de la línea facial">
+            </figure>
           </div>
-          <p class="mt-3 h4">Aceite exfoliación</p>
-          <p>Aromatizado x30cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Aceite exfoliación</h3>
+            <p>Aromatizado x30cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/facial4.jpg" alt="Producto de la línea facial">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/facial4.jpg" alt="Producto de la línea facial">
+            </figure>
           </div>
-          <p class="mt-3 h4">Bálsamo labial</p>
-          <p>Manteca de Karité x15gr</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Bálsamo labial</h3>
+            <p>Manteca de Karité x15gr</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
         
       </div>
@@ -125,42 +187,66 @@
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/corporal1.jpg" alt="Producto de la línea corporal">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/corporal1.jpg" alt="Producto de la línea corporal">
+            </figure>
           </div>
-          <p class="mt-3 h4">Bálsamo corporal</p>
-          <p>Regenerante x30gr</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Bálsamo corporal</h3>
+            <p>Regenerante x30gr</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/corporal2.jpg" alt="Producto de la línea corporal">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/corporal2.jpg" alt="Producto de la línea corporal">
+            </figure>
           </div>
-          <p class="mt-3 h4">Aceite revitalizante</p>
-          <p>Para uñas x30cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Aceite revitalizante</h3>
+            <p>Para uñas x30cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/corporal3.jpg" alt="Producto de la línea corporal">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/corporal3.jpg" alt="Producto de la línea corporal">
+            </figure>
           </div>
-          <p class="mt-3 h4">Emulsión para pies</p>
-          <p>Ciprés y menta x75cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Emulsión para pies</h3>
+            <p>Ciprés y menta x75cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/corporal4.jpg" alt="Producto de la línea corporal">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/corporal4.jpg" alt="Producto de la línea corporal">
+            </figure>
           </div>
-          <p class="mt-3 h4">Aceite descongestivo</p>
-          <p>Con jojoba x30cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Aceite descongestivo</h3>
+            <p>Con jojoba x30cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
         
       </div>
@@ -172,42 +258,66 @@
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/capilar1.jpg" alt="Producto de la línea capilar">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/capilar1.jpg" alt="Producto de la línea capilar">
+            </figure>
           </div>
-          <p class="mt-3 h4">Shampoo sólido</p>
-          <p>Naranja y limón x50g</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Shampoo sólido</h3>
+            <p>Naranja y limón x50g</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/capilar2.jpg" alt="Producto de la línea capilar">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/capilar2.jpg" alt="Producto de la línea capilar">
+            </figure>
           </div>
-          <p class="mt-3 h4">Acondicionador</p>
-          <p>Ortiga y romero x50g</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Acondicionador</h3>
+            <p>Ortiga y romero x50g</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/capilar3.jpg" alt="Producto de la línea capilar">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/capilar3.jpg" alt="Producto de la línea capilar">
+            </figure>
           </div>
-          <p class="mt-3 h4">Shampoo líquido</p>
-          <p>Ortiga y romero x200cc</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Shampoo líquido</h3>
+            <p>Ortiga y romero x200cc</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/capilar4.jpg" alt="Producto de la línea capilar">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/capilar4.jpg" alt="Producto de la línea capilar">
+            </figure>
           </div>
-          <p class="mt-3 h4">Combo x2 Shampoo</p>
-          <p>Ortiga y romero x50g</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Combo x2 Shampoo</h3>
+            <p>Ortiga y romero x50g</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
         
       </div>
@@ -219,42 +329,66 @@
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/kits1.jpg" alt="Producto de la línea de baño">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/kits1.jpg" alt="Producto de la línea de baño">
+            </figure>
           </div>
-          <p class="mt-3 h4">Kit rutina capilar 1</p>
-          <p>Sólidos de naranja y limón</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Kit rutina capilar 1</h3>
+            <p>Sólidos de naranja y limón</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/kits2.jpg" alt="Producto de la línea de baño">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/kits2.jpg" alt="Producto de la línea de baño">
+            </figure>
           </div>
-          <p class="mt-3 h4">Kit rutina facial</p>
-          <p>Neceser + Agua micelar</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Kit rutina facial</h3>
+            <p>Neceser + Agua micelar</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/kits3.jpg" alt="Producto de la línea de baño">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/kits3.jpg" alt="Producto de la línea de baño">
+            </figure>
           </div>
-          <p class="mt-3 h4">Kit rutina corporal</p>
-          <p>Neceser + Tónico corporal</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Kit rutina corporal</h3>
+            <p>Neceser + Tónico corporal</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/kits4.jpg" alt="Producto de la línea de baño">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/kits4.jpg" alt="Producto de la línea de baño">
+            </figure>
           </div>
-          <p class="mt-3 h4">Cepillo</p>
-          <p>Líquidos de naranja y limón</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Cepillo</h3>
+            <p>Líquidos de naranja y limón</p>
+            <p class="precio lead">$10.00</p>
+              <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
         
       </div>
@@ -266,49 +400,73 @@
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/accesorios1.jpg" alt="Producto de la línea de accesorios">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/accesorios1.jpg" alt="Producto de la línea de accesorios">
+            </figure>
           </div>
-          <p class="mt-3 h4">Cepillo chico</p>
-          <p>Masajeador</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Cepillo chico</h3>
+            <p>Masajeador</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/accesorios2.jpg" alt="Producto de la línea de accesorios">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/accesorios2.jpg" alt="Producto de la línea de accesorios">
+            </figure>
           </div>
-          <p class="mt-3 h4">Peine para rulos</p>
-          <p>Anti-frizz</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Peine para rulos</h3>
+            <p>Anti-frizz</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/accesorios3.jpg" alt="Producto de la línea de accesorios">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/accesorios3.jpg" alt="Producto de la línea de accesorios">
+            </figure>
           </div>
-          <p class="mt-3 h4">Peine clásico</p>
-          <p>Natural y ecológico</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Peine clásico</h3>
+            <p>Natural y ecológico</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
 
         <article class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 d-inline-block mx-auto">
           <div class="dontOverflow">
-            <img class="img-fluid catalogoImagen" src="../assets/img/accesorios4.jpg" alt="Producto de la línea de accesorios">
+            <figure>
+              <img class="img-fluid catalogoImagen" src="../assets/img/accesorios4.jpg" alt="Producto de la línea de accesorios">
+            </figure>
           </div>
-          <p class="mt-3 h4">Cepillo grande</p>
-          <p>Masajeador</p>
-          <p class="lead">$10.00</p>
-          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+          <div class="infoProducto">
+            <h3 class="mt-3 h3">Cepillo grande</h3>
+            <p>Masajeador</p>
+            <p class="precio lead">$10.00</p>
+            <button class="btn-add-cart">
+              <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+            </button>
+          </div>
         </article>
         
       </div>
 
     </section>
 
-  <!-- Incono Whats App + Scroll to the top ------------------------------------------------------------------¡---------------->
+  <!-- Incono Whats App + Scroll to the top ----------------------------------------------------------------------------------->
   <div class="whatsappIcon">
     <a href="#home"><img src="../assets/img/scrollup.svg" alt="Icono para hacer scroll hasta el top de la página" id="scrollTop"></a>
     <a href="https://wa.me/5493416601395"><img src="../assets/img/WhatsApp_icon.png" alt="Icono Whats App" id="wppIcon"></a>
@@ -369,29 +527,14 @@
     crossorigin="anonymous">
   </script>
 
+  <!-- Script Toastify ------------------------------------------------------------------------------------------------------------------>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Script SweetAlert ------------------------------------------------------------------------------------------------------------------>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- Link a archivo script.js -->
   <script src="../script.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const filtroBotones = document.querySelectorAll(".filtroBtn");
-      const productos = document.querySelectorAll(".catalogoProductos article");
-  
-      filtroBotones.forEach(function (boton) {
-        boton.addEventListener("click", function () {
-          const categoriaSeleccionada = boton.getAttribute("data-categoria");
-          
-          productos.forEach(function (producto) {
-            const categoriaProducto = producto.querySelector(".tarjetaSpan1").textContent.toLowerCase();
-            if (categoriaProducto === categoriaSeleccionada) {
-              producto.style.display = "block";
-            } else {
-              producto.style.display = "none";
-            }
-          });
-        });
-      });
-    });
-  </script>
 </body>
 </html>
