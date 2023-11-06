@@ -327,3 +327,101 @@ rowProduct.addEventListener('click', e => {
   }
 });
 
+
+
+//FETCH ------------------------------------------------------------------------
+let articulo = [];
+
+fetch("../productos.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('No se pudo cargar el archivo de productos.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        articulo = data;
+        cargarProductos(articulo);
+
+        // Verifica si la página actual es la página de inicio
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            // Selecciona el botón de "Destacados"
+            const botonDestacados = document.getElementById("destacados");
+
+            // Si el botón de "Destacados" existe, haz clic en él
+            if (botonDestacados) {
+                botonDestacados.click();
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error en la solicitud fetch:', error);
+    });
+
+//Armar productos en tienda
+const contenedorProductos = document.querySelector("#contenedor-productos");
+
+function cargarProductos(productosElegidos) {
+
+  contenedorProductos.innerHTML = "";
+
+  productosElegidos.forEach(articulo => {
+    const div = document.createElement("div");
+    div.classList.add("articulo", "col-12", "col-sm-6", "col-md-6", "col-lg-6", "col-xl-3", "d-inline-block", "mx-auto");
+    div.innerHTML = `
+      <div class="dontOverflow">
+        <figure>
+          <img class="img-fluid catalogoImagen" src="${articulo.imagen}" alt="${articulo.nombre}">
+        </figure>
+      </div>
+      <div class="infoProducto">
+        <h3 class="mt-3 h3">${articulo.nombre}</h3>
+        <p>${articulo.descripcion}</p>
+        <p class="precio lead">${articulo.precio}</p>
+        <button class="btn-add-cart">
+          <img class="carrito img-fluid" src="../assets/img/addtocart.png" alt="Carrito">
+        </button>
+      </div>
+    `;
+
+    contenedorProductos.append(div)
+  })
+}
+
+
+
+//Filtrar con botones los productos
+const botonesCategorias = document.querySelectorAll(".boton-categoria");
+
+botonesCategorias.forEach(boton => {
+  boton.addEventListener("click", (e) => {
+    botonesCategorias.forEach(boton => boton.classList.remove("active"));
+
+    e.currentTarget.classList.add("active");
+
+    if (e.currentTarget.id != "todos") {
+      const productosBoton = articulo.filter(articulo => articulo.categoria.id === e.currentTarget.id);
+      cargarProductos(productosBoton);
+    } else {
+      cargarProductos(articulo);
+    }
+  });
+});
+
+// Agrega un evento de escucha para el botón de "Destacados"
+const botonDestacados = document.getElementById("destacados");
+
+botonDestacados.addEventListener("click", () => {
+  // Filtra los productos destacados
+  const productosDestacados = articulo.filter(articulo => articulo.destacado === "si");
+  cargarProductos(productosDestacados);
+  
+  // Remueve la clase "active" de los otros botones de categoría
+  botonesCategorias.forEach(boton => boton.classList.remove("active"));
+  
+  // Agrega la clase "active" al botón de "Destacados"
+  botonDestacados.classList.add("active");
+});
+
+
+

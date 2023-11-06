@@ -111,6 +111,10 @@
   display: none;
 }
 
+.boton-hidden {
+  display: none;
+}
+
 /* Menu hamburguesa, solo resoluciones bajas ---------------------------------------------------------*/
 .menuHamburguesa, .hambScroll {
   padding: 0 31px;
@@ -380,6 +384,7 @@
   width: 470px;
   z-index: 5;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  overflow: auto;
 }
 
 .cart-product {
@@ -823,6 +828,13 @@ input.switch {
 #kits,
 #accesorios {
   scroll-margin-top: 80px;
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-bottom: 50px;
 }
 
 /* PÁGINA "SOBRE DE NOSOTROS" */

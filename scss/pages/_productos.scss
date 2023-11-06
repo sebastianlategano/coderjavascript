@@ -12,3 +12,10 @@
 #accesorios {
   scroll-margin-top: 80px;
 }
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,242 @@
+[
+    {
+      "id": "tonico-facial",
+      "nombre": "Tónico facial",
+      "descripcion": "Floral x100cc",
+      "imagen": "../assets/img/facial1.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Facial",
+        "id": "facial"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "crema-humectante",
+      "nombre": "Crema humectante",
+      "descripcion": "Manzanilla 75cc",
+      "imagen": "../assets/img/facial2.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Facial",
+        "id": "facial"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "aceite-exfoliacion",
+      "nombre": "Aceite exfoliación",
+      "descripcion": "Aromatizado x30cc",
+      "imagen": "../assets/img/facial3.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Facial",
+        "id": "facial"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "balsamo-labial",
+      "nombre": "Bálsamo labial",
+      "descripcion": "Manteca de Karité x15gr",
+      "imagen": "../assets/img/facial4.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Facial",
+        "id": "facial"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "balsamo-corporal",
+      "nombre": "Bálsamo corporal",
+      "descripcion": "Regenerante x30gr",
+      "imagen": "../assets/img/corporal1.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Corporal",
+        "id": "corporal"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "aceite-revitalizante",
+      "nombre": "Aceite revitalizante",
+      "descripcion": "Para uñas x30cc",
+      "imagen": "../assets/img/corporal2.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Corporal",
+        "id": "corporal"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "emulsion-pies",
+      "nombre": "Emulsión para pies",
+      "descripcion": "Ciprés y menta x75cc",
+      "imagen": "../assets/img/corporal3.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Corporal",
+        "id": "corporal"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "aceite-descongestivo",
+      "nombre": "Aceite descongestivo",
+      "descripcion": "Con jojoba x30cc",
+      "imagen": "../assets/img/corporal4.jpg",
+      "destacado": "si",
+      "categoria": {
+        "nombre": "Corporal",
+        "id": "corporal"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "shampoo-solido",
+      "nombre": "Shampoo sólido",
+      "descripcion": "Naranja y limón x50g",
+      "imagen": "../assets/img/capilar1.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Capilar",
+        "id": "capilar"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "acondicionador",
+      "nombre": "Acondicionador",
+      "descripcion": "Ortiga y romero x50g",
+      "imagen": "../assets/img/capilar2.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Capilar",
+        "id": "capilar"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "shampoo-liquido",
+      "nombre": "Shampoo líquido",
+      "descripcion": "Ortiga y romero x200cc",
+      "imagen": "../assets/img/capilar3.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Capilar",
+        "id": "capilar"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "combo-x2-shampoo",
+      "nombre": "Combo x2 Shampoo",
+      "descripcion": "Ortiga y romero x50g",
+      "imagen": "../assets/img/capilar4.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Capilar",
+        "id": "capilar"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "kit-rutina-capilar-1",
+      "nombre": "Kit rutina capilar 1",
+      "descripcion": "Sólidos de naranja y limón",
+      "imagen": "../assets/img/kits1.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Kits",
+        "id": "kits"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "kit-rutina-facial",
+      "nombre": "Kit rutina facial",
+      "descripcion": "Neceser + Agua micelar",
+      "imagen": "../assets/img/kits2.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Kits",
+        "id": "kits"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "kit-rutina-corporal",
+      "nombre": "Kit rutina corporal",
+      "descripcion": "Neceser + Tónico corporal",
+      "imagen": "../assets/img/kits3.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Kits",
+        "id": "kits"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "kit-rutina-corporal-2",
+      "nombre": "Kit rutina corporal 2",
+      "descripcion": "Neceser + Tónico corporal 2",
+      "imagen": "../assets/img/kits4.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Kits",
+        "id": "kits"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "cepillo-chico",
+      "nombre": "Cepillo chico",
+      "descripcion": "Masajeador",
+      "imagen": "../assets/img/accesorios1.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Accesorios",
+        "id": "accesorios"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "peine-para-rulos",
+      "nombre": "Peine para rulos",
+      "descripcion": "Anti-frizz",
+      "imagen": "../assets/img/accesorios2.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Accesorios",
+        "id": "accesorios"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "peine-clasico",
+      "nombre": "Peine clásico",
+      "descripcion": "Natural y ecológico",
+      "imagen": "../assets/img/accesorios3.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Accesorios",
+        "id": "accesorios"
+      },
+      "precio": "$10.00"
+    },
+    {
+      "id": "cepillo-grande",
+      "nombre": "Cepillo grande",
+      "descripcion": "Masajeador",
+      "imagen": "../assets/img/accesorios4.jpg",
+      "destacado": "no",
+      "categoria": {
+        "nombre": "Accesorios",
+        "id": "accesorios"
+      },
+      "precio": "$10.00"
+    }
+  ]
