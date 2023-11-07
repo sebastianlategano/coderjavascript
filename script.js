@@ -344,7 +344,7 @@ fetch(rutaJSON)
         cargarProductos(articulo);
 
         // Verifica si la página actual es la página de inicio
-        if (window.location.pathname === '/' || window.location.pathname === 'index.html') {
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.hostname === 'https://sebastianlategano.github.io/coderjavascript/index.html') {
             // Selecciona el botón de "Destacados"
             const botonDestacados = document.getElementById("destacados");
 
