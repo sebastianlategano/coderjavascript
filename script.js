@@ -1,133 +1,3 @@
-// Script para que las animaciones ocurran solo cuando esten en pantalla ------------------------------------------------------------->
-function applyAnimation(className, delayClassName) {
-  const elements = document.querySelectorAll("." + className);
-  function handleIntersect(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.visibility = "visible";
-        entry.target.style.opacity = 1;
-        entry.target.classList.add("animate__animated", "animate__fadeInUp");
-        observer.unobserve(entry.target);
-      }
-    });
-  }
-
-  const options = {
-    threshold: 0.5,
-  };
-
-  const observer = new IntersectionObserver(handleIntersect, options);
-  elements.forEach((element) => observer.observe(element));
-}
-
-applyAnimation("elemento-oculto");
-applyAnimation("elemento-con-delay");
-
-// Cambia color de fondo del navbar top, en desktop y mobile + Oculta/muestra botones Wpp y ScrollUp--------------------------------------->
-window.addEventListener("load", () => {
-  const mybutton = document.getElementById("scrollTop");
-  const wppIcon = document.getElementById("wppIcon");
-  const navTop = document.querySelector("#navTop");
-  const hambTop = document.querySelector("#hambTop");
-
-  window.onscroll = function () {
-    scrollFunction();
-    handleScrollEffects();
-  };
-
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      mybutton.classList.add("show");
-      wppIcon.classList.add("show");
-    } else {
-      mybutton.classList.remove("show");
-      wppIcon.classList.remove("show");
-    }
-  }
-
-  function handleScrollEffects() {
-    if (window.scrollY <= 10) {
-      navTop.className = "coverLinks";
-      hambTop.className = "menuHamburguesa";
-    } else {
-      navTop.className = "scroll";
-      hambTop.className = "hambScroll";
-    }
-  }
-
-  mybutton.addEventListener("click", function () {
-    topFunction();
-  });
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-});
-
-// Le da stop al video de youtube cuando se cierra el popup -------------------------------------------------------------->
-function stop() {
-  let video = document.getElementById("videoId");
-  video.contentWindow.postMessage(
-    '{"event":"command", "func":"stopVideo", "args":""}',
-    "*"
-  );
-}
-
-// Modo oscuro ----------------------------------------------------------------------------------------------------------->
-const themeToggle = document.getElementById("theme-toggle");
-const carouselExampleDark = document.getElementById("carouselExampleDark");
-const carouselExampleDark2 = document.getElementById("carouselExampleDark2");
-
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  if (savedTheme === "light") {
-    themeToggle.checked = true;
-    if (carouselExampleDark) {
-      carouselExampleDark.classList.add("carousel-dark");
-      carouselExampleDark2.classList.add("carousel-dark");
-    }
-  } else {
-    themeToggle.checked = false;
-    if (carouselExampleDark) {
-      carouselExampleDark.classList.remove("carousel-dark");
-      carouselExampleDark2.classList.remove("carousel-dark");
-    }
-  }
-}
-
-themeToggle.addEventListener("change", () => {
-  if (themeToggle.checked) {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
-    if (carouselExampleDark) {
-      carouselExampleDark.classList.add("carousel-dark");
-      carouselExampleDark2.classList.add("carousel-dark");
-    }
-  } else {
-    document.documentElement.setAttribute("data-theme", "darktheme");
-    localStorage.setItem("theme", "darktheme");
-    if (carouselExampleDark) {
-      carouselExampleDark.classList.remove("carousel-dark");
-      carouselExampleDark2.classList.remove("carousel-dark");
-    }
-  }
-});
-
-//Animacion solo cuando es pulsado el boton
-let togglerAnimation = document.querySelector("div.wrapper");
-
-document.addEventListener("keydown", function(e) {
-  togglerAnimation.classList.add('switch:after')
-})
-togglerAnimation.addEventListener("animationend", function(e) {
-  togglerAnimation.classList.remove('switch:after')
-});
-
 //Mostrar-Ocultar carrito
 const btnCart = document.querySelector('.container-cart-icon');
 const containerCartProducts = document.querySelector('.container-cart-products');
@@ -237,9 +107,10 @@ const showHTML = () => {
 		cartTotal.classList.remove('hidden-cart');
 	}
 
-  //Limpair carrito
+  //Limpiar carrito
   rowProduct.innerHTML = '';
 
+  //Armar lista de productos en el carrito
   let total = 0;
   let totalOfProducts = 0;
 
@@ -280,7 +151,6 @@ document.addEventListener('click', function (event) {
 });
 
 
-
 // Evento confirmar compra
 const btnConfirmarCompra = document.getElementById("btnConfirmarCompra");
 
@@ -300,20 +170,20 @@ btnConfirmarCompra.addEventListener("click", () => {
 );
 
 
-
+//Aumentar o disminuir en 1 el articulo en el carrito
 rowProduct.addEventListener('click', e => {
   if (e.target.classList.contains('buttonsQuantity')) {
     const productId = e.target.parentElement.parentElement.parentElement.querySelector('.titulo-producto-carrito').textContent;
 
     if (e.target.id === 'btnAdd') {
-      // Busca el producto por su título
+
       const product = allProducts.find(product => product.title === productId);
       
       if (product) {
         product.quantity++;
       }
     } else if (e.target.id === 'btnRemove') {
-      // Implementa la lógica para disminuir la cantidad si se presiona el botón "-"
+
       const product = allProducts.find(product => product.title === productId);
       
       if (product && product.quantity > 1) {
@@ -322,17 +192,16 @@ rowProduct.addEventListener('click', e => {
     }
 
     showHTML();
-    // Actualiza el carrito en el localStorage
+
     localStorage.setItem('carrito', JSON.stringify(allProducts));
   }
 });
 
 
-
 //FETCH ------------------------------------------------------------------------
 let articulo = [];
 
-fetch(rutaJSON)
+fetch("../productos.json")
     .then(response => {
         if (!response.ok) {
             throw new Error('No se pudo cargar el archivo de productos.');
@@ -342,17 +211,6 @@ fetch(rutaJSON)
     .then(data => {
         articulo = data;
         cargarProductos(articulo);
-
-        // Verifica si la página actual es la página de inicio
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.hostname === 'https://sebastianlategano.github.io/coderjavascript/index.html') {
-            // Selecciona el botón de "Destacados"
-            const botonDestacados = document.getElementById("destacados");
-
-            // Si el botón de "Destacados" existe, haz clic en él
-            if (botonDestacados) {
-                botonDestacados.click();
-            }
-        }
     })
     .catch(error => {
         console.error('Error en la solicitud fetch:', error);
@@ -389,39 +247,148 @@ function cargarProductos(productosElegidos) {
 }
 
 
-
 //Filtrar con botones los productos
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 
 botonesCategorias.forEach(boton => {
   boton.addEventListener("click", (e) => {
-    botonesCategorias.forEach(boton => boton.classList.remove("active"));
+
+    botonesCategorias.forEach(boton => boton.classList.remove("active"))
 
     e.currentTarget.classList.add("active");
 
     if (e.currentTarget.id != "todos") {
-      const productosBoton = articulo.filter(articulo => articulo.categoria.id === e.currentTarget.id);
+      const productosBoton = articulo.filter(articulo => articulo.categoria.id === e.currentTarget.id)
       cargarProductos(productosBoton);
     } else {
       cargarProductos(articulo);
     }
+
+  })
+})
+
+
+// Modo oscuro ----------------------------------------------------------------------------------------------------------->
+const themeToggle = document.getElementById("theme-toggle");
+const carouselExampleDark = document.getElementById("carouselExampleDark");
+const carouselExampleDark2 = document.getElementById("carouselExampleDark2");
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  if (savedTheme === "light") {
+    themeToggle.checked = true;
+    if (carouselExampleDark) {
+      carouselExampleDark.classList.add("carousel-dark");
+      carouselExampleDark2.classList.add("carousel-dark");
+    }
+  } else {
+    themeToggle.checked = false;
+    if (carouselExampleDark) {
+      carouselExampleDark.classList.remove("carousel-dark");
+      carouselExampleDark2.classList.remove("carousel-dark");
+    }
+  }
+}
+
+themeToggle.addEventListener("change", () => {
+  if (themeToggle.checked) {
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    if (carouselExampleDark) {
+      carouselExampleDark.classList.add("carousel-dark");
+      carouselExampleDark2.classList.add("carousel-dark");
+    }
+  } else {
+    document.documentElement.setAttribute("data-theme", "darktheme");
+    localStorage.setItem("theme", "darktheme");
+    if (carouselExampleDark) {
+      carouselExampleDark.classList.remove("carousel-dark");
+      carouselExampleDark2.classList.remove("carousel-dark");
+    }
+  }
+});
+
+
+// Script para que las animaciones ocurran solo cuando esten en pantalla ------------------------------------------------------------->
+function applyAnimation(className, delayClassName) {
+  const elements = document.querySelectorAll("." + className);
+  function handleIntersect(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.visibility = "visible";
+        entry.target.style.opacity = 1;
+        entry.target.classList.add("animate__animated", "animate__fadeInUp");
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const options = {
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+  elements.forEach((element) => observer.observe(element));
+}
+
+applyAnimation("elemento-oculto");
+applyAnimation("elemento-con-delay");
+
+// Cambia color de fondo del navbar top, en desktop y mobile + Oculta/muestra botones Wpp y ScrollUp--------------------------------------->
+window.addEventListener("load", () => {
+  const mybutton = document.getElementById("scrollTop");
+  const wppIcon = document.getElementById("wppIcon");
+  const navTop = document.querySelector("#navTop");
+  const hambTop = document.querySelector("#hambTop");
+
+  window.onscroll = function () {
+    scrollFunction();
+    handleScrollEffects();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      mybutton.classList.add("show");
+      wppIcon.classList.add("show");
+    } else {
+      mybutton.classList.remove("show");
+      wppIcon.classList.remove("show");
+    }
+  }
+
+  function handleScrollEffects() {
+    if (window.scrollY <= 10) {
+      navTop.className = "coverLinks";
+      hambTop.className = "menuHamburguesa";
+    } else {
+      navTop.className = "scroll";
+      hambTop.className = "hambScroll";
+    }
+  }
+
+  mybutton.addEventListener("click", function () {
+    topFunction();
   });
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 });
 
-// Agrega un evento de escucha para el botón de "Destacados"
-const botonDestacados = document.getElementById("destacados");
+// Le da stop al video de youtube cuando se cierra el popup -------------------------------------------------------------->
+function stop() {
+  let video = document.getElementById("videoId");
+  video.contentWindow.postMessage(
+    '{"event":"command", "func":"stopVideo", "args":""}',
+    "*"
+  );
+}
 
-botonDestacados.addEventListener("click", () => {
-  // Filtra los productos destacados
-  const productosDestacados = articulo.filter(articulo => articulo.destacado === "si");
-  cargarProductos(productosDestacados);
-  
-  // Remueve la clase "active" de los otros botones de categoría
-  botonesCategorias.forEach(boton => boton.classList.remove("active"));
-  
-  // Agrega la clase "active" al botón de "Destacados"
-  botonDestacados.classList.add("active");
-});
 
 
 
