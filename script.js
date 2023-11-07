@@ -332,7 +332,7 @@ rowProduct.addEventListener('click', e => {
 //FETCH ------------------------------------------------------------------------
 let articulo = [];
 
-fetch("/productos.json")
+fetch(rutaJSON)
     .then(response => {
         if (!response.ok) {
             throw new Error('No se pudo cargar el archivo de productos.');
