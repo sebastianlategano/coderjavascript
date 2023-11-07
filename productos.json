@@ -3,7 +3,7 @@
       "id": "tonico-facial",
       "nombre": "Tónico facial",
       "descripcion": "Floral x100cc",
-      "imagen": "/assets/img/facial1.jpg",
+      "imagen": "../assets/img/facial1.jpg",
       "destacado": "si",
       "categoria": {
         "nombre": "Facial",
