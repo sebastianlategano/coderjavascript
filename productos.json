@@ -21,7 +21,7 @@
         "nombre": "Facial",
         "id": "facial"
       },
-      "precio": "$12.00"
+      "precio": "$10.00"
     },
     {
       "id": "aceite-exfoliacion",
@@ -33,7 +33,7 @@
         "nombre": "Facial",
         "id": "facial"
       },
-      "precio": "$8.00"
+      "precio": "$10.00"
     },
     {
       "id": "balsamo-labial",
@@ -45,7 +45,7 @@
         "nombre": "Facial",
         "id": "facial"
       },
-      "precio": "$6.00"
+      "precio": "$10.00"
     },
     {
       "id": "balsamo-corporal",
@@ -57,7 +57,7 @@
         "nombre": "Corporal",
         "id": "corporal"
       },
-      "precio": "$11.00"
+      "precio": "$10.00"
     },
     {
       "id": "aceite-revitalizante",
@@ -69,7 +69,7 @@
         "nombre": "Corporal",
         "id": "corporal"
       },
-      "precio": "$9.00"
+      "precio": "$10.00"
     },
     {
       "id": "emulsion-pies",
@@ -81,7 +81,7 @@
         "nombre": "Corporal",
         "id": "corporal"
       },
-      "precio": "$15.00"
+      "precio": "$10.00"
     },
     {
       "id": "aceite-descongestivo",
@@ -93,7 +93,7 @@
         "nombre": "Corporal",
         "id": "corporal"
       },
-      "precio": "$17.00"
+      "precio": "$10.00"
     },
     {
       "id": "shampoo-solido",
@@ -105,7 +105,7 @@
         "nombre": "Capilar",
         "id": "capilar"
       },
-      "precio": "$12.00"
+      "precio": "$10.00"
     },
     {
       "id": "acondicionador",
@@ -117,7 +117,7 @@
         "nombre": "Capilar",
         "id": "capilar"
       },
-      "precio": "$16.00"
+      "precio": "$10.00"
     },
     {
       "id": "shampoo-liquido",
@@ -141,7 +141,7 @@
         "nombre": "Capilar",
         "id": "capilar"
       },
-      "precio": "$7.00"
+      "precio": "$10.00"
     },
     {
       "id": "kit-rutina-capilar-1",
@@ -153,7 +153,7 @@
         "nombre": "Kits",
         "id": "kits"
       },
-      "precio": "$20.00"
+      "precio": "$10.00"
     },
     {
       "id": "kit-rutina-facial",
@@ -165,7 +165,7 @@
         "nombre": "Kits",
         "id": "kits"
       },
-      "precio": "$22.00"
+      "precio": "$10.00"
     },
     {
       "id": "kit-rutina-corporal",
@@ -177,7 +177,7 @@
         "nombre": "Kits",
         "id": "kits"
       },
-      "precio": "$27.00"
+      "precio": "$10.00"
     },
     {
       "id": "kit-rutina-corporal-2",
@@ -189,7 +189,7 @@
         "nombre": "Kits",
         "id": "kits"
       },
-      "precio": "$28.00"
+      "precio": "$10.00"
     },
     {
       "id": "cepillo-chico",
@@ -201,7 +201,7 @@
         "nombre": "Accesorios",
         "id": "accesorios"
       },
-      "precio": "$7.00"
+      "precio": "$10.00"
     },
     {
       "id": "peine-para-rulos",
@@ -213,7 +213,7 @@
         "nombre": "Accesorios",
         "id": "accesorios"
       },
-      "precio": "$8.00"
+      "precio": "$10.00"
     },
     {
       "id": "peine-clasico",
@@ -225,7 +225,7 @@
         "nombre": "Accesorios",
         "id": "accesorios"
       },
-      "precio": "$9.00"
+      "precio": "$10.00"
     },
     {
       "id": "cepillo-grande",
